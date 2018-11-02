@@ -16,11 +16,12 @@ class Question extends React.Component {
       <article>
         {question.question &&
           <React.Fragment>
-            <p>{question.question}</p>
+            <p>{decodeURI(question.question).replace('%3F', '?').replace('%2C', ',')}</p>
             <ul>
-              {answers.map(answer => (
-                <li key={answer}><button onClick={() => { handleClick(answer); this.props.fetchQuestion(); }}>{answer}</button></li>
-              ))}
+              {answers.map(answer => {
+                answer = decodeURI(answer).replace('%2C', ',');
+                return <li key={answer} > <button onClick={() => { handleClick(answer); this.props.fetchQuestion(); }}>{answer}</button></li>
+              })}
             </ul>
           </React.Fragment>
         }

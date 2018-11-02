@@ -17,9 +17,9 @@ export function receiveQuestion(result) {
   };
 }
 
-export function fetchQuestion() {
+export function fetchQuestion(category = 10) {
   return function (dispatch) {
-    return fetch('https://opentdb.com/api.php?amount=1&category=20&difficulty=easy&type=multiple')
+    return fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=easy&type=multiple&encode=url3986`)
       .then(response => response.json())
       .then((result) => {
         dispatch(receiveQuestion(result));

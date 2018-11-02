@@ -41015,8 +41015,10 @@ function receiveQuestion(result) {
 }
 
 function fetchQuestion() {
+  var category = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
+
   return function (dispatch) {
-    return fetch('https://opentdb.com/api.php?amount=1&category=20&difficulty=easy&type=multiple').then(function (response) {
+    return fetch('https://opentdb.com/api.php?amount=1&category=' + category + '&difficulty=easy&type=multiple&encode=url3986').then(function (response) {
       return response.json();
     }).then(function (result) {
       dispatch(receiveQuestion(result));
@@ -41168,15 +41170,17 @@ var Question = function (_React$Component) {
           _react2.default.createElement(
             'p',
             null,
-            question.question
+            decodeURI(question.question).replace('%3F', '?').replace('%2C', ',')
           ),
           _react2.default.createElement(
             'ul',
             null,
             answers.map(function (answer) {
+              answer = decodeURI(answer).replace('%2C', ',');
               return _react2.default.createElement(
                 'li',
                 { key: answer },
+                ' ',
                 _react2.default.createElement(
                   'button',
                   { onClick: function onClick() {
@@ -41399,22 +41403,25 @@ Object.defineProperty(exports, "__esModule", {
 
 var _querystring = __webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js");
 
-var deEntisize = function deEntisize(text) {
-  return text.replace(/\&#039;/gi, '’').replace(/\&amp;/gi, '&').replace(/\s\&quot;/gi, ' ‘').replace(/\&quot;\s/gi, '’ ');
-};
+// export function deEntisize(text) {
+//   return text.replace(/\&#039;/gi, '’').replace(/\&amp;/gi, '&').replace(/\s\&quot;/gi, ' ‘').replace(/\&quot;?\?/gi, '’ ');
+// }
+
+// export function deEntisize(text) {
+//   return text.replace('&#039;', '’').replace('&amp;', '&').replace(' &quot;', ' ‘').replace('&quot;', '’ ');
+// }
 
 function questions() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { question: {}, answers: [], score: 0 };
   var action = arguments[1];
 
-  var tidyAnswer = '';
-  if (action.question) {
-    tidyAnswer = deEntisize(action.question.question);
-  }
+  // let tidyAnswer = '';
+  // if (action.question) {
+  //   tidyAnswer = deEntisize();
+  // }
   switch (action.type) {
     case 'RECEIVE_QUESTION':
-
-      return Object.assign({}, state, { question: Object.assign({}, action.question, { question: tidyAnswer }), answers: action.answers });
+      return Object.assign({}, state, { question: Object.assign({}, action.question, { question: action.question.question }), answers: action.answers });
     case 'RECEIVE_ANSWER':
       console.log(state);
       if (action.answer === state.question.correct_answer) {
