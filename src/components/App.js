@@ -1,11 +1,20 @@
 import React from 'react';
+import QuestionContainer from '../containers/QuestionContainer';
+import '../styles/app.scss';
+import { fetchQuestion } from '../actions';
 
 class App extends React.Component {
-  render(){
+
+  componentDidMount() {
+    fetchQuestion();
+  }
+
+  render() {
     return (
-      <div>
-        App contents go here
-      </div>
+      <main>
+        <h1>App contents go here</h1>
+        <QuestionContainer />
+      </main>
     )
   }
 }

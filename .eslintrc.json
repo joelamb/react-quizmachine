@@ -1,0 +1,29 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "import/no-named-as-default": 0,
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": "never"
+      }
+    ],
+    "func-names": [
+      "error",
+      "as-needed"
+    ]
+  }
+}
