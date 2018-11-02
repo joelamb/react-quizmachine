@@ -1,19 +1,24 @@
 import { connect } from 'react-redux';
 import Question from '../components/Question';
-import { fetchQuestion } from '../actions';
+import { fetchQuestion, submitAnswer } from '../actions';
 
 const mapStateToProps = state => {
   return {
-    question: state.question
+    question: state.quiz.question,
+    answers: state.quiz.answers
   }
 };
 
 const mapDisatchToProps = dispatch => {
   return {
-    handleClick: () => dispatch(fetchQuestion()),
-    fetchQuestion: dispatch(fetchQuestion())
+    fetchQuestion: dispatch(fetchQuestion()),
+    handleClick: answer => dispatch(submitAnswer(answer)),
   }
 };
+
+// const mapDisatchToProps = {
+//   fetchQuestion,
+// };
 
 export default connect(
   mapStateToProps,

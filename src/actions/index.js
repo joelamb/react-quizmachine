@@ -1,7 +1,19 @@
+import { shuffle } from 'lodash';
+
+
+export function submitAnswer(answer) {
+  return {
+    type: 'RECEIVE_ANSWER',
+    answer
+  }
+}
+
 export function receiveQuestion(result) {
+  const answers = Object.values(result.results[0].incorrect_answers).concat(result.results[0].correct_answer);
   return {
     type: 'RECEIVE_QUESTION',
     question: result.results[0],
+    answers: _.shuffle(answers)
   };
 }
 

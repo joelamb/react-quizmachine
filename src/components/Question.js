@@ -11,11 +11,16 @@ class Question extends React.Component {
   }
 
   render() {
-    const { question } = this.props;
+    const { question, answers, handleClick } = this.props;
 
     return (
       <article>
         <p>{question.question}</p>
+        <ul>
+          {answers.map(answer => (
+            <li key={answer}><button onClick={() => handleClick(answer)}>{answer}</button></li>
+          ))}
+        </ul>
       </article >
 
     )
