@@ -41424,7 +41424,7 @@ function questions() {
       return Object.assign({}, state, { question: Object.assign({}, action.question, { question: action.question.question }), answers: action.answers });
     case 'RECEIVE_ANSWER':
       console.log(state);
-      if (action.answer === state.question.correct_answer) {
+      if (action.answer === decodeURI(state.question.correct_answer)) {
         return Object.assign({}, state, { answer: action.answer, score: state.score + 1 });
       } else {
         return Object.assign({}, state, { answer: action.answer, score: 0 });
