@@ -41050,6 +41050,10 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Options = __webpack_require__(/*! ./Options */ "./src/components/Options.js");
+
+var _Options2 = _interopRequireDefault(_Options);
+
 var _QuestionContainer = __webpack_require__(/*! ../containers/QuestionContainer */ "./src/containers/QuestionContainer.js");
 
 var _QuestionContainer2 = _interopRequireDefault(_QuestionContainer);
@@ -41095,6 +41099,7 @@ var App = function (_React$Component) {
           null,
           'App contents go here'
         ),
+        _react2.default.createElement(_Options2.default, null),
         _react2.default.createElement(_QuestionContainer2.default, null),
         _react2.default.createElement(_ScoreboardContainer2.default, null)
       );
@@ -41105,6 +41110,109 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
+
+/***/ }),
+
+/***/ "./src/components/Options.js":
+/*!***********************************!*\
+  !*** ./src/components/Options.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Options = function Options() {
+  var categories = [{
+    id: '',
+    category: "Any"
+  }, {
+    id: 9,
+    category: "General Knowledge"
+  }, {
+    id: 12,
+    category: "Music"
+  }, {
+    id: 17,
+    category: "Science & Nature"
+  }, {
+    id: 20,
+    category: "Mythology"
+  }, {
+    id: 27,
+    category: "Animals"
+  }];
+
+  var difficulty = ["any", "easy", "medium", "hard"];
+
+  return _react2.default.createElement(
+    'form',
+    { onSubmit: function onSubmit(e) {
+        e.preventDefault();
+        console.log('Category', e.target.categorySelect.value);
+        console.log('Difficulty', e.target.difficultySelect.value);
+      } },
+    _react2.default.createElement(
+      'fieldset',
+      null,
+      _react2.default.createElement(
+        'legend',
+        null,
+        'Select a category'
+      ),
+      categories.map(function (item) {
+        var id = item.id,
+            category = item.category;
+
+        return _react2.default.createElement(
+          'div',
+          { key: id },
+          _react2.default.createElement('input', { type: 'radio', name: 'categorySelect', id: category, value: id }),
+          _react2.default.createElement(
+            'label',
+            { htmlFor: category },
+            category
+          )
+        );
+      })
+    ),
+    _react2.default.createElement(
+      'fieldset',
+      null,
+      _react2.default.createElement(
+        'legend',
+        null,
+        'Select a difficulty level'
+      ),
+      difficulty.map(function (item) {
+        return _react2.default.createElement(
+          'div',
+          { key: item },
+          _react2.default.createElement('input', { type: 'radio', name: 'difficultySelect', id: item, value: item }),
+          _react2.default.createElement(
+            'label',
+            { htmlFor: item },
+            item
+          )
+        );
+      })
+    ),
+    _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+  );
+};
+
+exports.default = Options;
 
 /***/ }),
 
