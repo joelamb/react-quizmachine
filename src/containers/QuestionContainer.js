@@ -9,16 +9,10 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDisatchToProps = dispatch => {
-  return {
-    fetchQuestion: dispatch(fetchQuestion()),
-    handleClick: answer => dispatch(submitAnswer(answer)),
-  }
+const mapDisatchToProps = {
+  fetchQuestion,
+  handleClick: submitAnswer,
 };
-
-// const mapDisatchToProps = {
-//   fetchQuestion,
-// };
 
 export default connect(
   mapStateToProps,

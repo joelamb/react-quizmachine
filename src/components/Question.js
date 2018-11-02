@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchQuestion } from '../actions';
 
 class Question extends React.Component {
   constructor(props) {
@@ -7,7 +6,7 @@ class Question extends React.Component {
   }
 
   componentDidMount() {
-    fetchQuestion();
+    this.props.fetchQuestion();
   }
 
   render() {
@@ -15,12 +14,16 @@ class Question extends React.Component {
 
     return (
       <article>
-        <p>{question.question}</p>
-        <ul>
-          {answers.map(answer => (
-            <li key={answer}><button onClick={() => handleClick(answer)}>{answer}</button></li>
-          ))}
-        </ul>
+        {question.question &&
+          <React.Fragment>
+            <p>{question.question}</p>
+            <ul>
+              {answers.map(answer => (
+                <li key={answer}><button onClick={() => { handleClick(answer); this.props.fetchQuestion(); }}>{answer}</button></li>
+              ))}
+            </ul>
+          </React.Fragment>
+        }
       </article >
 
     )

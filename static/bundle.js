@@ -19312,6 +19312,215 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 
+/***/ "./node_modules/querystring-es3/decode.js":
+/*!************************************************!*\
+  !*** ./node_modules/querystring-es3/decode.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+// If obj.hasOwnProperty has been overridden, then calling
+// obj.hasOwnProperty(prop) will break.
+// See: https://github.com/joyent/node/issues/1707
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+module.exports = function(qs, sep, eq, options) {
+  sep = sep || '&';
+  eq = eq || '=';
+  var obj = {};
+
+  if (typeof qs !== 'string' || qs.length === 0) {
+    return obj;
+  }
+
+  var regexp = /\+/g;
+  qs = qs.split(sep);
+
+  var maxKeys = 1000;
+  if (options && typeof options.maxKeys === 'number') {
+    maxKeys = options.maxKeys;
+  }
+
+  var len = qs.length;
+  // maxKeys <= 0 means that we should not limit keys count
+  if (maxKeys > 0 && len > maxKeys) {
+    len = maxKeys;
+  }
+
+  for (var i = 0; i < len; ++i) {
+    var x = qs[i].replace(regexp, '%20'),
+        idx = x.indexOf(eq),
+        kstr, vstr, k, v;
+
+    if (idx >= 0) {
+      kstr = x.substr(0, idx);
+      vstr = x.substr(idx + 1);
+    } else {
+      kstr = x;
+      vstr = '';
+    }
+
+    k = decodeURIComponent(kstr);
+    v = decodeURIComponent(vstr);
+
+    if (!hasOwnProperty(obj, k)) {
+      obj[k] = v;
+    } else if (isArray(obj[k])) {
+      obj[k].push(v);
+    } else {
+      obj[k] = [obj[k], v];
+    }
+  }
+
+  return obj;
+};
+
+var isArray = Array.isArray || function (xs) {
+  return Object.prototype.toString.call(xs) === '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/querystring-es3/encode.js":
+/*!************************************************!*\
+  !*** ./node_modules/querystring-es3/encode.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+var stringifyPrimitive = function(v) {
+  switch (typeof v) {
+    case 'string':
+      return v;
+
+    case 'boolean':
+      return v ? 'true' : 'false';
+
+    case 'number':
+      return isFinite(v) ? v : '';
+
+    default:
+      return '';
+  }
+};
+
+module.exports = function(obj, sep, eq, name) {
+  sep = sep || '&';
+  eq = eq || '=';
+  if (obj === null) {
+    obj = undefined;
+  }
+
+  if (typeof obj === 'object') {
+    return map(objectKeys(obj), function(k) {
+      var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
+      if (isArray(obj[k])) {
+        return map(obj[k], function(v) {
+          return ks + encodeURIComponent(stringifyPrimitive(v));
+        }).join(sep);
+      } else {
+        return ks + encodeURIComponent(stringifyPrimitive(obj[k]));
+      }
+    }).join(sep);
+
+  }
+
+  if (!name) return '';
+  return encodeURIComponent(stringifyPrimitive(name)) + eq +
+         encodeURIComponent(stringifyPrimitive(obj));
+};
+
+var isArray = Array.isArray || function (xs) {
+  return Object.prototype.toString.call(xs) === '[object Array]';
+};
+
+function map (xs, f) {
+  if (xs.map) return xs.map(f);
+  var res = [];
+  for (var i = 0; i < xs.length; i++) {
+    res.push(f(xs[i], i));
+  }
+  return res;
+}
+
+var objectKeys = Object.keys || function (obj) {
+  var res = [];
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) res.push(key);
+  }
+  return res;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/querystring-es3/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/querystring-es3/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.decode = exports.parse = __webpack_require__(/*! ./decode */ "./node_modules/querystring-es3/decode.js");
+exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node_modules/querystring-es3/encode.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/react-dom/cjs/react-dom.development.js":
 /*!*************************************************************!*\
   !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
@@ -40843,6 +41052,10 @@ var _QuestionContainer = __webpack_require__(/*! ../containers/QuestionContainer
 
 var _QuestionContainer2 = _interopRequireDefault(_QuestionContainer);
 
+var _ScoreboardContainer = __webpack_require__(/*! ../containers/ScoreboardContainer */ "./src/containers/ScoreboardContainer.js");
+
+var _ScoreboardContainer2 = _interopRequireDefault(_ScoreboardContainer);
+
 __webpack_require__(/*! ../styles/app.scss */ "./src/styles/app.scss");
 
 var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
@@ -40880,7 +41093,8 @@ var App = function (_React$Component) {
           null,
           'App contents go here'
         ),
-        _react2.default.createElement(_QuestionContainer2.default, null)
+        _react2.default.createElement(_QuestionContainer2.default, null),
+        _react2.default.createElement(_ScoreboardContainer2.default, null)
       );
     }
   }]);
@@ -40912,8 +41126,6 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40934,11 +41146,13 @@ var Question = function (_React$Component) {
   _createClass(Question, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      (0, _actions.fetchQuestion)();
+      this.props.fetchQuestion();
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props,
           question = _props.question,
           answers = _props.answers,
@@ -40948,27 +41162,31 @@ var Question = function (_React$Component) {
       return _react2.default.createElement(
         'article',
         null,
-        _react2.default.createElement(
-          'p',
+        question.question && _react2.default.createElement(
+          _react2.default.Fragment,
           null,
-          question.question
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          answers.map(function (answer) {
-            return _react2.default.createElement(
-              'li',
-              { key: answer },
-              _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                    return handleClick(answer);
-                  } },
-                answer
-              )
-            );
-          })
+          _react2.default.createElement(
+            'p',
+            null,
+            question.question
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            answers.map(function (answer) {
+              return _react2.default.createElement(
+                'li',
+                { key: answer },
+                _react2.default.createElement(
+                  'button',
+                  { onClick: function onClick() {
+                      handleClick(answer);_this2.props.fetchQuestion();
+                    } },
+                  answer
+                )
+              );
+            })
+          )
         )
       );
     }
@@ -40978,6 +41196,43 @@ var Question = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Question;
+
+/***/ }),
+
+/***/ "./src/components/Scoreboard.js":
+/*!**************************************!*\
+  !*** ./src/components/Scoreboard.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Scoreboard = function Scoreboard(_ref) {
+  var score = _ref.score;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'p',
+      null,
+      score
+    )
+  );
+};
+
+exports.default = Scoreboard;
 
 /***/ }),
 
@@ -41012,20 +41267,44 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-var mapDisatchToProps = function mapDisatchToProps(dispatch) {
+var mapDisatchToProps = {
+  fetchQuestion: _actions.fetchQuestion,
+  handleClick: _actions.submitAnswer
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDisatchToProps)(_Question2.default);
+
+/***/ }),
+
+/***/ "./src/containers/ScoreboardContainer.js":
+/*!***********************************************!*\
+  !*** ./src/containers/ScoreboardContainer.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _Scoreboard = __webpack_require__(/*! ../components/Scoreboard */ "./src/components/Scoreboard.js");
+
+var _Scoreboard2 = _interopRequireDefault(_Scoreboard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    fetchQuestion: dispatch((0, _actions.fetchQuestion)()),
-    handleClick: function handleClick(answer) {
-      return dispatch((0, _actions.submitAnswer)(answer));
-    }
+    score: state.quiz.score
   };
 };
 
-// const mapDisatchToProps = {
-//   fetchQuestion,
-// };
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDisatchToProps)(_Question2.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_Scoreboard2.default);
 
 /***/ }),
 
@@ -41117,17 +41396,32 @@ exports.default = (0, _redux.combineReducers)({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _querystring = __webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js");
+
+var deEntisize = function deEntisize(text) {
+  return text.replace(/\&#039;/gi, '’').replace(/\&amp;/gi, '&').replace(/\s\&quot;/gi, ' ‘').replace(/\&quot;\s/gi, '’ ');
+};
+
 function questions() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { question: {}, answers: [], score: 0 };
   var action = arguments[1];
 
+  var tidyAnswer = '';
+  if (action.question) {
+    tidyAnswer = deEntisize(action.question.question);
+  }
   switch (action.type) {
     case 'RECEIVE_QUESTION':
-      console.log(state);
-      return Object.assign({}, state, { question: action.question, answers: action.answers });
+
+      return Object.assign({}, state, { question: Object.assign({}, action.question, { question: tidyAnswer }), answers: action.answers });
     case 'RECEIVE_ANSWER':
       console.log(state);
-      return Object.assign({}, state, { answer: action.answer, score: state.score + 1 });
+      if (action.answer === state.question.correct_answer) {
+        return Object.assign({}, state, { answer: action.answer, score: state.score + 1 });
+      } else {
+        return Object.assign({}, state, { answer: action.answer, score: 0 });
+      }
     default:
       return state;
   }
