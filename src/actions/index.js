@@ -1,6 +1,14 @@
 import { shuffle } from 'lodash';
 
 
+export function setOptions(categoryID, difficulty) {
+  return {
+    type: 'SET_OPTIONS',
+    categoryID,
+    difficulty
+  }
+}
+
 export function submitAnswer(answer) {
   return {
     type: 'RECEIVE_ANSWER',
@@ -17,9 +25,11 @@ export function receiveQuestion(result) {
   };
 }
 
-export function fetchQuestion(category = 10) {
-  return function (dispatch) {
-    return fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=easy&type=multiple&encode=url3986`)
+export function fetchQuestion() {
+  return function (dispatch, getState) {
+    const category = getState().options.categoryID;
+    const difficulty = getState().options.difficulty;
+    return fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple&encode=url3986`)
       .then(response => response.json())
       .then((result) => {
         dispatch(receiveQuestion(result));

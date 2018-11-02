@@ -1,5 +1,5 @@
 import React from 'react';
-import Options from './Options';
+import OptionsContainer from '../containers/OptionsContainer';
 import QuestionContainer from '../containers/QuestionContainer';
 import ScoreBoardContainer from '../containers/ScoreboardContainer';
 import '../styles/app.scss';
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <main>
         <h1>App contents go here</h1>
-        <Options />
+        <OptionsContainer />
         <QuestionContainer />
         <ScoreBoardContainer />
       </main>

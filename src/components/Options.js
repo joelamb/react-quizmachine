@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Options = () => {
+const Options = ({ handleSubmit }) => {
   const categories = [
     {
       id: '',
@@ -33,8 +33,10 @@ const Options = () => {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
+      console.log(handleSubmit);
       console.log('Category', e.target.categorySelect.value);
       console.log('Difficulty', e.target.difficultySelect.value);
+      handleSubmit(e.target.categorySelect.value, e.target.difficultySelect.value);
     }}>
       <fieldset>
         <legend>Select a category</legend>
