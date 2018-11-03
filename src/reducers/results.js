@@ -19,7 +19,7 @@ const results = (state = { answer: '', correctAnswer: false, lives: 3, score: 0,
       if (action.answer === action.correctAnswer) {
         return Object.assign({}, state, { answer: action.answer, score: state.score + scoreIncrement, correctAnswer: true });
       } else {
-        return Object.assign({}, state, { answer: action.answer, score: 0, correctAnswer: false })
+        return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false })
       }
     default:
       return state;

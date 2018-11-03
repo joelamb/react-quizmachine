@@ -7,6 +7,9 @@ import { fetchQuestion } from '../actions';
 import ResultContainer from '../containers/ResultContainer';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
     fetchQuestion();
@@ -15,11 +18,12 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <h1>App contents go here</h1>
+        <h1>App contents go here.. you've got {this.props.lives} lives</h1>
         <OptionsContainer />
         <QuestionContainer />
         <ResultContainer />
         <ScoreBoardContainer />
+        {/* <GameOver /> */}
       </main>
     )
   }

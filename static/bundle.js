@@ -41229,10 +41229,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
   }
 
   _createClass(App, [{
@@ -41249,7 +41249,9 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'App contents go here'
+          'App contents go here.. you\'ve got ',
+          this.props.lives,
+          ' lives'
         ),
         _react2.default.createElement(_OptionsContainer2.default, null),
         _react2.default.createElement(_QuestionContainer2.default, null),
@@ -41551,6 +41553,36 @@ exports.default = Scoreboard;
 
 /***/ }),
 
+/***/ "./src/containers/AppContainer.js":
+/*!****************************************!*\
+  !*** ./src/containers/AppContainer.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _App = __webpack_require__(/*! ../components/App */ "./src/components/App.js");
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return { lives: state.results.lives };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_App2.default);
+
+/***/ }),
+
 /***/ "./src/containers/OptionsContainer.js":
 /*!********************************************!*\
   !*** ./src/containers/OptionsContainer.js ***!
@@ -41719,10 +41751,6 @@ var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/i
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(/*! ./components/App */ "./src/components/App.js");
-
-var _App2 = _interopRequireDefault(_App);
-
 var _reduxThunk = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
@@ -41735,6 +41763,10 @@ var _reducers = __webpack_require__(/*! ./reducers */ "./src/reducers/index.js")
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
+var _AppContainer = __webpack_require__(/*! ./containers/AppContainer */ "./src/containers/AppContainer.js");
+
+var _AppContainer2 = _interopRequireDefault(_AppContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
@@ -41743,7 +41775,7 @@ var store = (0, _redux.createStore)(_reducers2.default, composeEnhancers((0, _re
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,
   { store: store },
-  _react2.default.createElement(_App2.default, null)
+  _react2.default.createElement(_AppContainer2.default, null)
 ), document.getElementById('root'));
 
 /***/ }),
@@ -41881,7 +41913,7 @@ var results = function results() {
       if (action.answer === action.correctAnswer) {
         return Object.assign({}, state, { answer: action.answer, score: state.score + scoreIncrement, correctAnswer: true });
       } else {
-        return Object.assign({}, state, { answer: action.answer, score: 0, correctAnswer: false });
+        return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false });
       }
     default:
       return state;
