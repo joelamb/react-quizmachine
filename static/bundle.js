@@ -41317,9 +41317,6 @@ var Options = function Options(_ref) {
     "form",
     { onSubmit: function onSubmit(e) {
         e.preventDefault();
-        console.log(handleSubmit);
-        console.log('Category', e.target.categorySelect.value);
-        console.log('Difficulty', e.target.difficultySelect.value);
         handleSubmit(e.target.categorySelect.value, e.target.difficultySelect.value);
       } },
     _react2.default.createElement(
@@ -41492,14 +41489,30 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Result = function Result(_ref) {
-  var correctAnswer = _ref.correctAnswer;
+  var correctAnswer = _ref.correctAnswer,
+      questionsAnswered = _ref.questionsAnswered;
   return _react2.default.createElement(
-    'div',
-    null,
+    "div",
+    { key: questionsAnswered },
     correctAnswer && _react2.default.createElement(
-      'p',
+      _react2.default.Fragment,
       null,
-      'Yes'
+      _react2.default.createElement(
+        "p",
+        null,
+        "Yes"
+      ),
+      _react2.default.createElement("audio", { src: "/static/assets/yeah_baby.mp3", autoPlay: "true" })
+    ),
+    correctAnswer !== '' && !correctAnswer && _react2.default.createElement(
+      _react2.default.Fragment,
+      null,
+      _react2.default.createElement(
+        "p",
+        null,
+        "No"
+      ),
+      _react2.default.createElement("audio", { src: "/static/assets/dang.mp3", autoPlay: "true" })
     )
   );
 };
@@ -41692,7 +41705,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    correctAnswer: state.results.correctAnswer
+    correctAnswer: state.results.correctAnswer,
+    questionsAnswered: state.results.questionsAnswered
   };
 };
 
@@ -41890,10 +41904,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var results = function results() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { answer: '', correctAnswer: false, lives: 3, score: 0 };
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { answer: '', correctAnswer: '', lives: 3, score: 0, questionsAnswered: 0 };
   var action = arguments[1];
 
-  console.log(state);
   switch (action.type) {
     case 'RECEIVE_ANSWER':
       var scoreIncrement = void 0;
@@ -41911,9 +41924,9 @@ var results = function results() {
           scoreIncrement = 1;
       }
       if (action.answer === action.correctAnswer) {
-        return Object.assign({}, state, { answer: action.answer, score: state.score + scoreIncrement, correctAnswer: true });
+        return Object.assign({}, state, { answer: action.answer, score: state.score + scoreIncrement, correctAnswer: true, questionsAnswered: state.questionsAnswered + 1 });
       } else {
-        return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false });
+        return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false, questionsAnswered: state.questionsAnswered + 1 });
       }
     default:
       return state;

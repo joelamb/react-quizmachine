@@ -3,7 +3,8 @@ import Result from '../components/Result';
 
 const mapStateToProps = state => {
   return {
-    correctAnswer: state.results.correctAnswer
+    correctAnswer: state.results.correctAnswer,
+    questionsAnswered: state.results.questionsAnswered
   }
 }
 

@@ -1,5 +1,4 @@
-const results = (state = { answer: '', correctAnswer: false, lives: 3, score: 0, }, action) => {
-  console.log(state);
+const results = (state = { answer: '', correctAnswer: '', lives: 3, score: 0, questionsAnswered: 0 }, action) => {
   switch (action.type) {
     case 'RECEIVE_ANSWER':
       let scoreIncrement;
@@ -17,9 +16,9 @@ const results = (state = { answer: '', correctAnswer: false, lives: 3, score: 0,
           scoreIncrement = 1;
       }
       if (action.answer === action.correctAnswer) {
-        return Object.assign({}, state, { answer: action.answer, score: state.score + scoreIncrement, correctAnswer: true });
+        return Object.assign({}, state, { answer: action.answer, score: state.score + scoreIncrement, correctAnswer: true, questionsAnswered: state.questionsAnswered + 1 });
       } else {
-        return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false })
+        return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false, questionsAnswered: state.questionsAnswered + 1 })
       }
     default:
       return state;

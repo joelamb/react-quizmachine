@@ -32,9 +32,6 @@ const Options = ({ handleSubmit }) => {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      console.log(handleSubmit);
-      console.log('Category', e.target.categorySelect.value);
-      console.log('Difficulty', e.target.difficultySelect.value);
       handleSubmit(e.target.categorySelect.value, e.target.difficultySelect.value);
     }}>
       <fieldset>
