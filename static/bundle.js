@@ -41131,8 +41131,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.setOptions = setOptions;
 exports.submitAnswer = submitAnswer;
+exports.receiveHiScores = receiveHiScores;
 exports.receiveQuestion = receiveQuestion;
 exports.fetchQuestion = fetchQuestion;
+exports.fetchHiScores = fetchHiScores;
+exports.submitHighScore = submitHighScore;
 
 var _lodash = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
@@ -41150,6 +41153,12 @@ function submitAnswer(answer, difficulty, correctAnswer) {
     answer: answer,
     difficulty: difficulty,
     correctAnswer: correctAnswer
+  };
+}
+function receiveHiScores(hiscores) {
+  return {
+    type: 'RECEIVE_HISCORES',
+    hiscores: hiscores
   };
 }
 
@@ -41173,6 +41182,25 @@ function fetchQuestion() {
     }).catch(function (error) {
       console.log(error.message);
     });
+  };
+}
+
+function fetchHiScores() {
+  return function (dispatch) {
+    return fetch('/api/scores').then(function (response) {
+      return response.json();
+    }).then(function (hiscores) {
+      dispatch(receiveHiScores(hiscores));
+    }).catch(function (error) {
+      console.log(error.message);
+    });
+  };
+}
+
+function submitHighScore() {
+  return function (dispatch, getState) {
+    var score = getState().results.score;
+    return;
   };
 }
 
@@ -41206,17 +41234,21 @@ var _QuestionContainer = __webpack_require__(/*! ../containers/QuestionContainer
 
 var _QuestionContainer2 = _interopRequireDefault(_QuestionContainer);
 
+var _ResultContainer = __webpack_require__(/*! ../containers/ResultContainer */ "./src/containers/ResultContainer.js");
+
+var _ResultContainer2 = _interopRequireDefault(_ResultContainer);
+
 var _ScoreboardContainer = __webpack_require__(/*! ../containers/ScoreboardContainer */ "./src/containers/ScoreboardContainer.js");
 
 var _ScoreboardContainer2 = _interopRequireDefault(_ScoreboardContainer);
 
+var _GameOverContainer = __webpack_require__(/*! ../containers/GameOverContainer */ "./src/containers/GameOverContainer.js");
+
+var _GameOverContainer2 = _interopRequireDefault(_GameOverContainer);
+
 __webpack_require__(/*! ../styles/app.scss */ "./src/styles/app.scss");
 
 var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
-
-var _ResultContainer = __webpack_require__(/*! ../containers/ResultContainer */ "./src/containers/ResultContainer.js");
-
-var _ResultContainer2 = _interopRequireDefault(_ResultContainer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41238,7 +41270,8 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      (0, _actions.fetchQuestion)();
+      this.props.fetchHiScores();
+      this.props.fetchQuestion();
     }
   }, {
     key: 'render',
@@ -41253,10 +41286,15 @@ var App = function (_React$Component) {
           this.props.lives,
           ' lives'
         ),
-        _react2.default.createElement(_OptionsContainer2.default, null),
-        _react2.default.createElement(_QuestionContainer2.default, null),
-        _react2.default.createElement(_ResultContainer2.default, null),
-        _react2.default.createElement(_ScoreboardContainer2.default, null)
+        this.props.lives > 0 && _react2.default.createElement(
+          _react2.default.Fragment,
+          null,
+          _react2.default.createElement(_OptionsContainer2.default, null),
+          _react2.default.createElement(_QuestionContainer2.default, null),
+          _react2.default.createElement(_ScoreboardContainer2.default, null),
+          _react2.default.createElement(_ResultContainer2.default, null)
+        ),
+        this.props.lives === 0 && _react2.default.createElement(_GameOverContainer2.default, null)
       );
     }
   }]);
@@ -41265,6 +41303,121 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
+
+/***/ }),
+
+/***/ "./src/components/GameOver.js":
+/*!************************************!*\
+  !*** ./src/components/GameOver.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GameOver = function GameOver(_ref) {
+  var hiscores = _ref.hiscores,
+      score = _ref.score,
+      playerName = _ref.playerName,
+      setPlayerName = _ref.setPlayerName;
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "h2",
+      null,
+      "Game Over"
+    ),
+    _react2.default.createElement(
+      "h3",
+      null,
+      "Leaderboard"
+    ),
+    _react2.default.createElement(
+      "table",
+      null,
+      _react2.default.createElement(
+        "thead",
+        null,
+        _react2.default.createElement(
+          "tr",
+          null,
+          _react2.default.createElement(
+            "td",
+            null,
+            "Name"
+          ),
+          _react2.default.createElement(
+            "td",
+            null,
+            "Score"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "tbody",
+        null,
+        hiscores.map(function (item) {
+          var name = item.name,
+              score = item.score;
+
+          return _react2.default.createElement(
+            "tr",
+            { key: name },
+            _react2.default.createElement(
+              "td",
+              null,
+              name
+            ),
+            _react2.default.createElement(
+              "td",
+              null,
+              score
+            )
+          );
+        })
+      )
+    ),
+    _react2.default.createElement(
+      "h3",
+      null,
+      "Your score: ",
+      score
+    ),
+    _react2.default.createElement(
+      "form",
+      { onSubmit: function onSubmit(e) {
+          e.preventDefault();
+        } },
+      _react2.default.createElement(
+        "label",
+        { htmlFor: "playerName" },
+        _react2.default.createElement("input", {
+          type: "text",
+          name: "playerName",
+          id: "playerName",
+          onChange: function onChange() {
+            return setPlayerName(e.target.value);
+          },
+          value: playerName })
+      ),
+      _react2.default.createElement("input", { type: "submit", value: "Save Score" })
+    )
+  );
+};
+
+exports.default = GameOver;
 
 /***/ }),
 
@@ -41412,11 +41565,6 @@ var Question = function (_React$Component) {
   }
 
   _createClass(Question, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.fetchQuestion();
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -41451,7 +41599,7 @@ var Question = function (_React$Component) {
                   { onClick: function onClick() {
                       handleClick(answer, difficulty, question.correct_answer);fetchQuestion();
                     } },
-                  answer
+                  (0, _he.decode)(answer)
                 )
               );
             })
@@ -41500,9 +41648,8 @@ var Result = function Result(_ref) {
       _react2.default.createElement(
         "p",
         null,
-        "Yes"
-      ),
-      _react2.default.createElement("audio", { src: "/static/assets/yeah_baby.mp3", autoPlay: "true" })
+        _react2.default.createElement("img", { src: "/static/assets/yeah_baby.jpg", alt: "" })
+      )
     ),
     correctAnswer !== '' && !correctAnswer && _react2.default.createElement(
       _react2.default.Fragment,
@@ -41510,9 +41657,8 @@ var Result = function Result(_ref) {
       _react2.default.createElement(
         "p",
         null,
-        "No"
-      ),
-      _react2.default.createElement("audio", { src: "/static/assets/dang.mp3", autoPlay: "true" })
+        _react2.default.createElement("img", { src: "/static/assets/dang.jpg", alt: "" })
+      )
     )
   );
 };
@@ -41586,13 +41732,61 @@ var _App = __webpack_require__(/*! ../components/App */ "./src/components/App.js
 
 var _App2 = _interopRequireDefault(_App);
 
+var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-  return { lives: state.results.lives };
+  return {
+    lives: state.results.lives
+  };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_App2.default);
+var mapDisatchToProps = {
+  fetchQuestion: _actions.fetchQuestion,
+  fetchHiScores: _actions.fetchHiScores
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDisatchToProps)(_App2.default);
+
+/***/ }),
+
+/***/ "./src/containers/GameOverContainer.js":
+/*!*********************************************!*\
+  !*** ./src/containers/GameOverContainer.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _GameOver = __webpack_require__(/*! ../components/GameOver */ "./src/components/GameOver.js");
+
+var _GameOver2 = _interopRequireDefault(_GameOver);
+
+var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    score: state.results.score,
+    hiscores: state.results.hiscores
+  };
+};
+
+var mapDispatchToProps = {
+  submitHiScore: _actions.submitHiScore
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_GameOver2.default);
 
 /***/ }),
 
@@ -41904,7 +42098,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var results = function results() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { answer: '', correctAnswer: '', lives: 3, score: 0, questionsAnswered: 0 };
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { answer: '', correctAnswer: '', lives: 0, score: 6, questionsAnswered: 0, hiscores: [] };
   var action = arguments[1];
 
   switch (action.type) {
@@ -41928,6 +42122,8 @@ var results = function results() {
       } else {
         return Object.assign({}, state, { answer: action.answer, lives: state.lives - 1, correctAnswer: false, questionsAnswered: state.questionsAnswered + 1 });
       }
+    case 'RECEIVE_HISCORES':
+      return Object.assign({}, state, { hiscores: action.hiscores });
     default:
       return state;
   }

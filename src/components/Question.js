@@ -6,11 +6,6 @@ class Question extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchQuestion();
-  }
-
-
   render() {
     const { question, answers, difficulty, handleClick, fetchQuestion } = this.props;
 
@@ -21,7 +16,7 @@ class Question extends React.Component {
             <p>{decode(question.question)}</p>
             <ul>
               {answers.map(answer => {
-                return <li key={answer} > <button onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }}>{answer}</button></li>
+                return <li key={answer} > <button onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }}>{decode(answer)}</button></li>
               })}
             </ul>
           </React.Fragment>

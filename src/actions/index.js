@@ -1,6 +1,8 @@
 import { shuffle } from 'lodash';
 
 
+
+
 export function setOptions(categoryID, difficulty) {
   return {
     type: 'SET_OPTIONS',
@@ -15,6 +17,12 @@ export function submitAnswer(answer, difficulty, correctAnswer) {
     answer,
     difficulty,
     correctAnswer,
+  }
+}
+export function receiveHiScores(hiscores) {
+  return {
+    type: 'RECEIVE_HISCORES',
+    hiscores
   }
 }
 
@@ -38,4 +46,22 @@ export function fetchQuestion() {
       })
       .catch((error) => { console.log(error.message); });
   };
+}
+
+export function fetchHiScores() {
+  return function (dispatch) {
+    return fetch(`/api/scores`)
+      .then(response => response.json())
+      .then(hiscores => {
+        dispatch(receiveHiScores(hiscores));
+      })
+      .catch(error => { console.log(error.message) })
+  }
+}
+
+export function submitHighScore() {
+  return function (dispatch, getState) {
+    const score = getState().results.score;
+    return
+  }
 }

@@ -2,12 +2,12 @@
   "name": "react-quizmachine",
   "version": "1.0.0",
   "description": "Quiz app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "open ./index.html"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,11 +18,16 @@
     ]
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "classnames": "^2.2.6",
+    "dotenv": "^6.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "express": "^4.16.4",
+    "hbs": "^4.0.1",
     "he": "^1.2.0",
     "lodash": "^4.17.11",
+    "pg-promise": "^8.5.1",
     "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -43,6 +48,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^22.4.2",
+    "nodemon": "^1.18.5",
     "node-sass": "^4.9.4",
     "react-test-renderer": "^16.4.1",
     "sass-loader": "^7.1.0",
