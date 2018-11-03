@@ -1,11 +1,11 @@
 const results = (state = {
   answer: '',
   correctAnswer: '',
-  lives: 3,
-  score: 0,
-  questionsAnswered: 0,
+  lives: 0,
+  score: 19,
+  questionsAnswered: 12,
   hiscores: [],
-  playerName: ''
+  playerName: 'JAC'
 }, action) => {
   switch (action.type) {
     case 'RECEIVE_ANSWER':

@@ -64,16 +64,28 @@ export function setPlayerName(playerName) {
     type: 'SET_PLAYER_NAME',
     playerName
   }
-}
+};
 
 
 export function submitHiScore() {
   return function (dispatch, getState) {
     const name = getState().results.playerName;
     const score = getState().results.score;
-    return {
-      type: 'SUBMIT_HISCORE'
-
-    }
+    const questions = getState().results.questionsAnswered;
+    console.log(JSON.stringify({ name, score, questions }))
+    fetch('/api/score', {
+      method: 'POST',
+      body: JSON.stringify({ name, score, questions }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      // .then(response => response.json())
+      // .then(result => (console.log(result.message)))
+      .then(response => {
+        if (response.ok) {
+          return dispatch(fetchHiScores());
+        }
+      });
   }
-}
+};

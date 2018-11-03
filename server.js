@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const pgp = require('pg-promise')();
+const boom = require('express-boom');
 
 const db = pgp({
   host: 'localhost',
@@ -14,6 +15,7 @@ const db = pgp({
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+app.use(boom());
 
 app.set('port', process.env.PORT || 8080);
 app.use('/static', express.static('static'));
@@ -26,7 +28,9 @@ app.get('/api/scores', (req, res) => {
     GROUP BY player.name
     ORDER BY score DESC`)
     .then(hiscores => res.json(hiscores))
-    .catch(error => res.json(error.messgage));
+    .catch(error => {
+      res.boom.notFound(`Sorry, there are no hi-scores`);
+    });
 });
 
 // get player hi-score by id
@@ -38,7 +42,9 @@ app.get('/api/score/:id', (req, res) => {
     ORDER BY score DESC
     LIMIT 1`, [req.params.id])
     .then(hiscore => res.json(hiscore))
-    .catch(error => res.json(error.message))
+    .catch(error => {
+      res.boom.notFound(`Sorry, that player does not exist`);
+    });
 });
 
 app.post('/api/score', (req, res) => {
@@ -46,12 +52,16 @@ app.post('/api/score', (req, res) => {
   db.one(
     `INSERT INTO player (name) VALUES ($1) RETURNING id`, [name]
   )
-    .then(id => {
-      db.one(
+    .then(result => {
+      const id = result.id;
+      db.none(
         `INSERT INTO game (score, questions, player_id) VALUES ($1, $2, $3)`, [score, questions, id]
       )
         .then(res.json({ "message": "score saved" }));
-    });
+    })
+    .catch(error =>
+      res.boom.badRequest(`Sorry, we could not save your hi-score`)
+    );
 });
 
 app.use((req, res) => {

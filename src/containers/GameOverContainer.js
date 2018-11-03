@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GameOver from '../components/GameOver';
-import { submitHiScore, setPlayerName } from '../actions';
+import { setPlayerName, submitHiScore } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
+  setPlayerName,
   submitHiScore,
-  setPlayerName
 }
 
 export default connect(

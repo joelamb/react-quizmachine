@@ -41203,18 +41203,30 @@ function setPlayerName(playerName) {
     type: 'SET_PLAYER_NAME',
     playerName: playerName
   };
-}
+};
 
 function submitHiScore() {
   return function (dispatch, getState) {
     var name = getState().results.playerName;
     var score = getState().results.score;
-    return {
-      type: 'SUBMIT_HISCORE'
-
-    };
+    var questions = getState().results.questionsAnswered;
+    console.log(JSON.stringify({ name: name, score: score, questions: questions }));
+    fetch('/api/score', {
+      method: 'POST',
+      body: JSON.stringify({ name: name, score: score, questions: questions }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    // .then(response => response.json())
+    // .then(result => (console.log(result.message)))
+    .then(function (response) {
+      if (response.ok) {
+        return dispatch(fetchHiScores());
+      }
+    });
   };
-}
+};
 
 /***/ }),
 
@@ -41805,8 +41817,8 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = {
-  submitHiScore: _actions.submitHiScore,
-  setPlayerName: _actions.setPlayerName
+  setPlayerName: _actions.setPlayerName,
+  submitHiScore: _actions.submitHiScore
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_GameOver2.default);
@@ -42124,11 +42136,11 @@ var results = function results() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
     answer: '',
     correctAnswer: '',
-    lives: 3,
-    score: 0,
-    questionsAnswered: 0,
+    lives: 0,
+    score: 19,
+    questionsAnswered: 12,
     hiscores: [],
-    playerName: ''
+    playerName: 'JAC'
   };
   var action = arguments[1];
 
