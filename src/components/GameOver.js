@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameOver = ({ hiscores, score, playerName, setPlayerName }) => (
+const GameOver = ({ hiscores, score, playerName, setPlayerName, submitHiScore }) => (
   <div>
     <h2>Game Over</h2>
     <h3>Leaderboard</h3>
@@ -21,18 +21,23 @@ const GameOver = ({ hiscores, score, playerName, setPlayerName }) => (
         })}
       </tbody>
     </table>
-    <h3>Your score: {score}</h3>
     <form onSubmit={e => {
       e.preventDefault();
+      submitHiScore();
     }}>
-      <label htmlFor="playerName">
+      <label htmlFor="score">Your score:
+        <input type="number" name="score" id="score" value={score} readOnly />
+      </label><br />
+      <label htmlFor="playerName">Enter your initials:
         <input
           type="text"
           name="playerName"
           id="playerName"
-          onChange={() => setPlayerName(e.target.value)}
-          value={playerName} />
-      </label>
+          onChange={e => setPlayerName(e.target.value)}
+          value={playerName}
+          pattern="[A-Za-z]{3}"
+          placeholder="3 characters" />
+      </label><br />
       <input type="submit" value="Save Score" />
     </form>
 

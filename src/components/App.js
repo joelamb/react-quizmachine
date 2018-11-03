@@ -6,7 +6,6 @@ import ScoreBoardContainer from '../containers/ScoreboardContainer';
 import GameOverContainer from '../containers/GameOverContainer';
 
 import '../styles/app.scss';
-import { fetchQuestion } from '../actions';
 
 
 class App extends React.Component {

@@ -41,6 +41,19 @@ app.get('/api/score/:id', (req, res) => {
     .catch(error => res.json(error.message))
 });
 
+app.post('/api/score', (req, res) => {
+  const { name, score, questions } = req.body
+  db.one(
+    `INSERT INTO player (name) VALUES ($1) RETURNING id`, [name]
+  )
+    .then(id => {
+      db.one(
+        `INSERT INTO game (score, questions, player_id) VALUES ($1, $2, $3)`, [score, questions, id]
+      )
+        .then(res.json({ "message": "score saved" }));
+    });
+});
+
 app.use((req, res) => {
   res.render('index');
 })

@@ -1,4 +1,12 @@
-const results = (state = { answer: '', correctAnswer: '', lives: 0, score: 6, questionsAnswered: 0, hiscores: [] }, action) => {
+const results = (state = {
+  answer: '',
+  correctAnswer: '',
+  lives: 3,
+  score: 0,
+  questionsAnswered: 0,
+  hiscores: [],
+  playerName: ''
+}, action) => {
   switch (action.type) {
     case 'RECEIVE_ANSWER':
       let scoreIncrement;
@@ -22,6 +30,8 @@ const results = (state = { answer: '', correctAnswer: '', lives: 0, score: 6, qu
       }
     case 'RECEIVE_HISCORES':
       return Object.assign({}, state, { hiscores: action.hiscores });
+    case 'SET_PLAYER_NAME':
+      return Object.assign({}, state, { playerName: action.playerName })
     default:
       return state;
   }

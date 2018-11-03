@@ -24,10 +24,9 @@ const Options = ({ handleSubmit }) => {
     }
   ]
 
-  const levels = ["easy", "medium", "hard"];
-
-  let currentLevel = "medium";
-  let currentCategoryID = "9"
+  const difficulties = ["easy", "medium", "hard"];
+  const initialId = categories[0].id;
+  const initialDifficulty = difficulties[0];
 
   return (
     <form onSubmit={(e) => {
@@ -39,7 +38,12 @@ const Options = ({ handleSubmit }) => {
         {categories.map(item => {
           const { id, category } = item;
           return <div key={id}>
-            <input type="radio" name="categorySelect" id={category} value={id} />
+            <input
+              type="radio"
+              name="categorySelect"
+              id={category}
+              value={id}
+              defaultChecked={id == initialId ? true : false} />
             <label htmlFor={category}>{category}</label>
           </div>
         })}
@@ -47,9 +51,9 @@ const Options = ({ handleSubmit }) => {
 
       <fieldset>
         <legend>Select a difficulty level</legend>
-        {levels.map(item => {
+        {difficulties.map(item => {
           return <div key={item}>
-            <input type="radio" name="difficultySelect" id={item} value={item} defaultChecked={item == currentLevel ? true : false} />
+            <input type="radio" name="difficultySelect" id={item} value={item} defaultChecked={item == initialDifficulty ? true : false} />
             <label htmlFor={item}>{item}</label>
           </div>
         })}

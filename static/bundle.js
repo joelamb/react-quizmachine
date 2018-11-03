@@ -41135,7 +41135,8 @@ exports.receiveHiScores = receiveHiScores;
 exports.receiveQuestion = receiveQuestion;
 exports.fetchQuestion = fetchQuestion;
 exports.fetchHiScores = fetchHiScores;
-exports.submitHighScore = submitHighScore;
+exports.setPlayerName = setPlayerName;
+exports.submitHiScore = submitHiScore;
 
 var _lodash = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
@@ -41197,10 +41198,21 @@ function fetchHiScores() {
   };
 }
 
-function submitHighScore() {
+function setPlayerName(playerName) {
+  return {
+    type: 'SET_PLAYER_NAME',
+    playerName: playerName
+  };
+}
+
+function submitHiScore() {
   return function (dispatch, getState) {
+    var name = getState().results.playerName;
     var score = getState().results.score;
-    return;
+    return {
+      type: 'SUBMIT_HISCORE'
+
+    };
   };
 }
 
@@ -41247,8 +41259,6 @@ var _GameOverContainer = __webpack_require__(/*! ../containers/GameOverContainer
 var _GameOverContainer2 = _interopRequireDefault(_GameOverContainer);
 
 __webpack_require__(/*! ../styles/app.scss */ "./src/styles/app.scss");
-
-var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41330,7 +41340,8 @@ var GameOver = function GameOver(_ref) {
   var hiscores = _ref.hiscores,
       score = _ref.score,
       playerName = _ref.playerName,
-      setPlayerName = _ref.setPlayerName;
+      setPlayerName = _ref.setPlayerName,
+      submitHiScore = _ref.submitHiScore;
   return _react2.default.createElement(
     "div",
     null,
@@ -41390,28 +41401,34 @@ var GameOver = function GameOver(_ref) {
       )
     ),
     _react2.default.createElement(
-      "h3",
-      null,
-      "Your score: ",
-      score
-    ),
-    _react2.default.createElement(
       "form",
       { onSubmit: function onSubmit(e) {
           e.preventDefault();
+          submitHiScore();
         } },
       _react2.default.createElement(
         "label",
+        { htmlFor: "score" },
+        "Your score:",
+        _react2.default.createElement("input", { type: "number", name: "score", id: "score", value: score, readOnly: true })
+      ),
+      _react2.default.createElement("br", null),
+      _react2.default.createElement(
+        "label",
         { htmlFor: "playerName" },
+        "Enter your initials:",
         _react2.default.createElement("input", {
           type: "text",
           name: "playerName",
           id: "playerName",
-          onChange: function onChange() {
+          onChange: function onChange(e) {
             return setPlayerName(e.target.value);
           },
-          value: playerName })
+          value: playerName,
+          pattern: "[A-Za-z]{3}",
+          placeholder: "3 characters" })
       ),
+      _react2.default.createElement("br", null),
       _react2.default.createElement("input", { type: "submit", value: "Save Score" })
     )
   );
@@ -41461,10 +41478,9 @@ var Options = function Options(_ref) {
     category: "Animals"
   }];
 
-  var levels = ["easy", "medium", "hard"];
-
-  var currentLevel = "medium";
-  var currentCategoryID = "9";
+  var difficulties = ["easy", "medium", "hard"];
+  var initialId = categories[0].id;
+  var initialDifficulty = difficulties[0];
 
   return _react2.default.createElement(
     "form",
@@ -41487,7 +41503,12 @@ var Options = function Options(_ref) {
         return _react2.default.createElement(
           "div",
           { key: id },
-          _react2.default.createElement("input", { type: "radio", name: "categorySelect", id: category, value: id }),
+          _react2.default.createElement("input", {
+            type: "radio",
+            name: "categorySelect",
+            id: category,
+            value: id,
+            defaultChecked: id == initialId ? true : false }),
           _react2.default.createElement(
             "label",
             { htmlFor: category },
@@ -41504,11 +41525,11 @@ var Options = function Options(_ref) {
         null,
         "Select a difficulty level"
       ),
-      levels.map(function (item) {
+      difficulties.map(function (item) {
         return _react2.default.createElement(
           "div",
           { key: item },
-          _react2.default.createElement("input", { type: "radio", name: "difficultySelect", id: item, value: item, defaultChecked: item == currentLevel ? true : false }),
+          _react2.default.createElement("input", { type: "radio", name: "difficultySelect", id: item, value: item, defaultChecked: item == initialDifficulty ? true : false }),
           _react2.default.createElement(
             "label",
             { htmlFor: item },
@@ -41778,15 +41799,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     score: state.results.score,
-    hiscores: state.results.hiscores
+    hiscores: state.results.hiscores,
+    playerName: state.results.playerName
   };
 };
 
 var mapDispatchToProps = {
-  submitHiScore: _actions.submitHiScore
+  submitHiScore: _actions.submitHiScore,
+  setPlayerName: _actions.setPlayerName
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_GameOver2.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_GameOver2.default);
 
 /***/ }),
 
@@ -42098,7 +42121,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var results = function results() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { answer: '', correctAnswer: '', lives: 0, score: 6, questionsAnswered: 0, hiscores: [] };
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    answer: '',
+    correctAnswer: '',
+    lives: 3,
+    score: 0,
+    questionsAnswered: 0,
+    hiscores: [],
+    playerName: ''
+  };
   var action = arguments[1];
 
   switch (action.type) {
@@ -42124,6 +42155,8 @@ var results = function results() {
       }
     case 'RECEIVE_HISCORES':
       return Object.assign({}, state, { hiscores: action.hiscores });
+    case 'SET_PLAYER_NAME':
+      return Object.assign({}, state, { playerName: action.playerName });
     default:
       return state;
   }

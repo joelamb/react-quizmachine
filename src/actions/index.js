@@ -59,9 +59,21 @@ export function fetchHiScores() {
   }
 }
 
-export function submitHighScore() {
+export function setPlayerName(playerName) {
+  return {
+    type: 'SET_PLAYER_NAME',
+    playerName
+  }
+}
+
+
+export function submitHiScore() {
   return function (dispatch, getState) {
+    const name = getState().results.playerName;
     const score = getState().results.score;
-    return
+    return {
+      type: 'SUBMIT_HISCORE'
+
+    }
   }
 }
