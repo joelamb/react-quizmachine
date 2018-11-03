@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Scoreboard = ({ score }) => (
+const Scoreboard = ({ score, lives }) => (
   <div>
-    <p>{score}</p>
+    <p>Lives: {lives}</p>
+    <p>Score: {score}</p>
   </div>
 )
 

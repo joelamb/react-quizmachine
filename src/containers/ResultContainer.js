@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
-import Scoreboard from '../components/Scoreboard';
+import Result from '../components/Result';
 
 const mapStateToProps = state => {
   return {
-    score: state.results.score,
-    lives: state.results.lives
+    correctAnswer: state.results.correctAnswer
   }
 }
 
 export default connect(
   mapStateToProps
-)(Scoreboard);
+)(Result);

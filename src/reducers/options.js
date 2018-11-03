@@ -1,4 +1,4 @@
-function options(state = { categoryID: 0, difficulty: 0 }, action) {
+function options(state = { categoryID: 9, difficulty: "medium" }, action) {
   switch (action.type) {
     case 'SET_OPTIONS':
       return Object.assign(

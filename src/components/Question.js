@@ -1,4 +1,5 @@
 import React from 'react';
+import { decode } from 'he';
 
 class Question extends React.Component {
   constructor(props) {
@@ -11,17 +12,16 @@ class Question extends React.Component {
 
 
   render() {
-    const { question, answers, handleClick } = this.props;
+    const { question, answers, difficulty, handleClick, fetchQuestion } = this.props;
 
     return (
       <article>
         {question.question &&
           <React.Fragment>
-            <p>{decodeURI(question.question).replace('%3F', '?').replace('%2C', ',')}</p>
+            <p>{decode(question.question)}</p>
             <ul>
               {answers.map(answer => {
-                answer = decodeURI(answer).replace('%2C', ',');
-                return <li key={answer} > <button onClick={() => { handleClick(answer); this.props.fetchQuestion(); }}>{answer}</button></li>
+                return <li key={answer} > <button onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }}>{answer}</button></li>
               })}
             </ul>
           </React.Fragment>

@@ -9,10 +9,12 @@ export function setOptions(categoryID, difficulty) {
   }
 }
 
-export function submitAnswer(answer) {
+export function submitAnswer(answer, difficulty, correctAnswer) {
   return {
     type: 'RECEIVE_ANSWER',
-    answer
+    answer,
+    difficulty,
+    correctAnswer,
   }
 }
 
@@ -29,7 +31,7 @@ export function fetchQuestion() {
   return function (dispatch, getState) {
     const category = getState().options.categoryID;
     const difficulty = getState().options.difficulty;
-    return fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple&encode=url3986`)
+    return fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple`)
       .then(response => response.json())
       .then((result) => {
         dispatch(receiveQuestion(result));

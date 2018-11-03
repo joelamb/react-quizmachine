@@ -3,10 +3,6 @@ import React from 'react';
 const Options = ({ handleSubmit }) => {
   const categories = [
     {
-      id: '',
-      category: "Any"
-    },
-    {
       id: 9,
       category: "General Knowledge",
     },
@@ -28,7 +24,10 @@ const Options = ({ handleSubmit }) => {
     }
   ]
 
-  const difficulty = ["any", "easy", "medium", "hard"];
+  const levels = ["easy", "medium", "hard"];
+
+  let currentLevel = "medium";
+  let currentCategoryID = "9"
 
   return (
     <form onSubmit={(e) => {
@@ -51,9 +50,9 @@ const Options = ({ handleSubmit }) => {
 
       <fieldset>
         <legend>Select a difficulty level</legend>
-        {difficulty.map(item => {
+        {levels.map(item => {
           return <div key={item}>
-            <input type="radio" name="difficultySelect" id={item} value={item} />
+            <input type="radio" name="difficultySelect" id={item} value={item} defaultChecked={item == currentLevel ? true : false} />
             <label htmlFor={item}>{item}</label>
           </div>
         })}

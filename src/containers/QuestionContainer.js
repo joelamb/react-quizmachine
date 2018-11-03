@@ -5,7 +5,8 @@ import { fetchQuestion, submitAnswer } from '../actions';
 const mapStateToProps = state => {
   return {
     question: state.quiz.question,
-    answers: state.quiz.answers
+    answers: state.quiz.answers,
+    difficulty: state.options.difficulty,
   }
 };
 
