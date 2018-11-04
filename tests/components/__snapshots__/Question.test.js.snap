@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question renders correctly 1`] = `
+<article
+  className="question-holder"
+>
+  <p
+    className="question"
+  >
+    What cricketing term denotes a batsman being dismissed with a score of zero?
+  </p>
+  <ul
+    className="answers"
+  >
+    <li
+      className="answer btn"
+      onClick={[Function]}
+    >
+      Bye
+    </li>
+    <li
+      className="answer btn"
+      onClick={[Function]}
+    >
+      Beamer
+    </li>
+    <li
+      className="answer btn"
+      onClick={[Function]}
+    >
+      Duck
+    </li>
+    <li
+      className="answer btn"
+      onClick={[Function]}
+    >
+      Carry
+    </li>
+  </ul>
+</article>
+`;

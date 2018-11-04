@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scoreboard renders correctly 1`] = `
+<section
+  className="scoreboard"
+>
+  <p
+    className="scoreboard__lives"
+  >
+    Lives
+    <span />
+  </p>
+  <p
+    className="scoreboard__score"
+  >
+    Score
+    <span />
+  </p>
+</section>
+`;

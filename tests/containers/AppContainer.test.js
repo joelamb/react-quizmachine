@@ -1,16 +1,18 @@
-import { mapStateToProps } from '../../src/containers/ScoreboardContainer';
+import { mapStateToProps } from '../../src/containers/AppContainer';
 
 describe('mapStateToProps', () => {
   test('it extracts score and lives from state', () => {
     const testState = {
       results: {
-        score: 3,
-        lives: 2
+        lives: 3
+      },
+      options: {
+        show: true
       }
     }
     const expectedOutput = {
-      score: 3,
-      lives: 2
+      lives: 3,
+      show: true
     }
     const output = mapStateToProps(testState);
     expect(output).toEqual(expectedOutput);

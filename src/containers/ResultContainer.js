@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Result from '../components/Result';
 import { hideResult } from '../actions';
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     correctAnswer: state.results.correctAnswer,
     questionsAnswered: state.results.questionsAnswered,

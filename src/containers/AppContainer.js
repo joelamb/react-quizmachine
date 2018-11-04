@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import App from '../components/App';
 import { fetchQuestion, fetchHiScores, showOptions } from '../actions';
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     lives: state.results.lives,
     show: state.options.show

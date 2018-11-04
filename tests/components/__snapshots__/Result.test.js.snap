@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result renders correctly 1`] = `
+<div
+  className="result"
+>
+  <audio
+    autoPlay="true"
+    onEnded={[Function]}
+    onLoadStart={[Function]}
+    src="/static/assets/dang.mp3"
+  />
+  <div
+    className="result__incorrect"
+  >
+    <img
+      alt=""
+      src="/static/assets/dang.jpg"
+    />
+  </div>
+</div>
+`;

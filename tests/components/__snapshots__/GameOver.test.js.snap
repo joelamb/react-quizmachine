@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameOver should render correctly 1`] = `
+<section
+  className="gameover"
+>
+  <h2>
+    Game Over
+  </h2>
+  <h3>
+    Leaderboard
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          Score
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          joe
+        </td>
+        <td>
+          24
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ben
+        </td>
+        <td>
+          18
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form
+    className="score"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <legend>
+        Save your score
+      </legend>
+      <p>
+        <label
+          htmlFor="score"
+        >
+          Your score:
+          <input
+            id="score"
+            name="score"
+            readOnly={true}
+            type="number"
+            value={undefined}
+          />
+        </label>
+      </p>
+      <p>
+        <label
+          htmlFor="playerName"
+        >
+          Enter your initials:
+          <input
+            className="name"
+            id="playerName"
+            name="playerName"
+            onChange={[Function]}
+            pattern="[A-Za-z]{3}"
+            placeholder="3 characters"
+            type="text"
+            value={undefined}
+          />
+        </label>
+      </p>
+      <button
+        className="btn btn__primary"
+        type="submit"
+      >
+        Save score
+      </button>
+    </fieldset>
+  </form>
+</section>
+`;

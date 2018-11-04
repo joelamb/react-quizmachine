@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Question from '../components/Question';
 import { fetchQuestion, submitAnswer, hideQuestion } from '../actions';
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     question: state.quiz.question,
     answers: state.quiz.answers,
