@@ -6,7 +6,7 @@ const mapStateToProps = state => {
   return {
     question: state.quiz.question,
     answers: state.quiz.answers,
-    difficulty: state.options.difficulty,
+    difficulty: state.quiz.question.difficulty,
   }
 };
 
@@ -16,12 +16,6 @@ const mapDisatchToProps = dispatch => {
     handleClick: (answer, difficult, correctAnswer) => { dispatch(submitAnswer(answer, difficult, correctAnswer)) }
   }
 }
-
-
-// const mapDisatchToProps = {
-//   fetchQuestion,
-//   handleClick: submitAnswer,
-// };
 
 export default connect(
   mapStateToProps,

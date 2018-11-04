@@ -2,6 +2,7 @@
 
 .options{
   position: absolute;
+  z-index: 10;
   background-color: $color2;
   border-bottom: 1px solid $color1;
   padding: 1rem 0.5rem;

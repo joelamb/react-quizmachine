@@ -4,7 +4,7 @@ import { shuffle } from 'lodash';
 export function showOptions(show) {
   return {
     type: 'SHOW_OPTIONS',
-    show
+    show: !show,
   }
 }
 
@@ -12,7 +12,7 @@ export function setOptions(categoryID, difficulty) {
   return {
     type: 'SET_OPTIONS',
     categoryID,
-    difficulty
+    difficulty,
   }
 }
 
@@ -25,7 +25,7 @@ export function submitAnswer(answer, difficulty, correctAnswer) {
   }
 }
 
-export function hideResult(hidden) {
+export function hideResult() {
   return {
     type: 'HIDE_RESULT',
   }

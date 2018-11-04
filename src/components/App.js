@@ -6,7 +6,6 @@ import ScoreBoardContainer from '../containers/ScoreboardContainer';
 import GameOverContainer from '../containers/GameOverContainer';
 
 import '../styles/app.scss';
-import { showOptions } from '../actions';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class App extends React.Component {
       <main>
         <header>
           <div>
-            <button onClick={() => this.props.showOptions(!this.props.show)} ><i className="material-icons">menu</i></button>
+            <button onClick={() => this.props.showOptions(this.props.show)} ><i className="material-icons">menu</i></button>
             <h1>Mastermind</h1>
           </div>
         </header>

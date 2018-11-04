@@ -1,10 +1,33 @@
-import { deEntisize } from '../../src/reducers/questions';
+import questions from '../../src/reducers/questions';
 
-describe('questions', () => {
-  describe('deEntisizer should remove html entities from string', () => {
-    const expectedOutput = "Who wrote James Bond novels & the childrens’ story ‘Chitty Chitty Bang Bang’?";
-    const output = deEntisize("Who wrote James Bond novels &amp; the childrens&#039; story &quot;Chitty Chitty Bang Bang&quot;?");
-    expect(output).toEqual(expectedOutput)
+describe('questions reducer', () => {
+  test('executes RECEIVE_QUESTION action', () => {
+    const initialState = { question: {}, answers: [] };
+    const action = {
+      type: 'RECEIVE_QUESTION',
+      question: {
+        category: "Sports",
+        correct_answer: "Duck",
+        difficulty: "medium",
+        incorrect_answers: ["Bye", "Beamer", "Carry"],
+        question: "What cricketing term denotes a batsman being dismissed with a score of zero?",
+        type: "multiple"
+      },
+      answers: ["Bye", "Beamer", "Duck", "Carry"]
+    }
+    const expectedState = {
+      question: {
+        category: "Sports",
+        correct_answer: "Duck",
+        difficulty: "medium",
+        incorrect_answers: ["Bye", "Beamer", "Carry"],
+        question: "What cricketing term denotes a batsman being dismissed with a score of zero?",
+        type: "multiple"
+      },
+      answers: ["Bye", "Beamer", "Duck", "Carry"]
+    }
+    const outputState = questions(initialState, action);
+    expect(outputState).toEqual(expectedState);
   })
 })
 
