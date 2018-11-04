@@ -1,7 +1,12 @@
 import { shuffle } from 'lodash';
 
 
-
+export function showOptions(show) {
+  return {
+    type: 'SHOW_OPTIONS',
+    show
+  }
+}
 
 export function setOptions(categoryID, difficulty) {
   return {
@@ -47,7 +52,7 @@ export function fetchQuestion() {
   return function (dispatch, getState) {
     const category = getState().options.categoryID;
     const difficulty = getState().options.difficulty;
-    return fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple`)
+    return fetch(`https://opentdb.com/api.php?amount=1&type=multiple&difficulty=${difficulty}&category=${category}`)
       .then(response => response.json())
       .then((result) => {
         dispatch(receiveQuestion(result));
@@ -80,20 +85,16 @@ export function submitHiScore() {
     const name = getState().results.playerName;
     const score = getState().results.score;
     const questions = getState().results.questionsAnswered;
-    console.log(JSON.stringify({ name, score, questions }))
     fetch('/api/score', {
       method: 'POST',
       body: JSON.stringify({ name, score, questions }),
       headers: {
         'Content-Type': 'application/json'
       }
-    })
-      // .then(response => response.json())
-      // .then(result => (console.log(result.message)))
-      .then(response => {
-        if (response.ok) {
-          return dispatch(fetchHiScores());
-        }
-      });
+    }).then(response => {
+      if (response.ok) {
+        return dispatch(fetchHiScores());
+      }
+    });
   }
 };

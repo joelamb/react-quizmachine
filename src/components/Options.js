@@ -4,6 +4,10 @@ import '../styles/options.scss';
 const Options = ({ handleSubmit }) => {
   const categories = [
     {
+      id: 0,
+      category: "Any"
+    },
+    {
       id: 9,
       category: "General Knowledge",
     },
@@ -25,7 +29,7 @@ const Options = ({ handleSubmit }) => {
     }
   ]
 
-  const difficulties = ["easy", "medium", "hard"];
+  const difficulties = ["any", "easy", "medium", "hard"];
   const initialId = categories[0].id;
   const initialDifficulty = difficulties[0];
 

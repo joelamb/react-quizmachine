@@ -6,7 +6,7 @@ import ScoreBoardContainer from '../containers/ScoreboardContainer';
 import GameOverContainer from '../containers/GameOverContainer';
 
 import '../styles/app.scss';
-
+import { showOptions } from '../actions';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,20 +22,26 @@ class App extends React.Component {
     return (
       <main>
         <header>
-          <i className="material-icons">menu</i>
-          <h1>Mastermind</h1>
+          <div>
+            <button onClick={() => this.props.showOptions(!this.props.show)} ><i className="material-icons">menu</i></button>
+            <h1>Mastermind</h1>
+          </div>
         </header>
-        {this.props.lives > 0 &&
-          <React.Fragment>
-            <OptionsContainer />
-            <QuestionContainer />
-            <ScoreBoardContainer />
-            <ResultContainer />
-          </React.Fragment>
-        }
-        {this.props.lives === 0 &&
-          <GameOverContainer />
-        }
+        <section className="page">
+          {this.props.lives > 0 &&
+            <React.Fragment>
+              {this.props.show &&
+                <OptionsContainer />
+              }
+              <QuestionContainer />
+              <ScoreBoardContainer />
+              <ResultContainer />
+            </React.Fragment>
+          }
+          {this.props.lives === 0 &&
+            <GameOverContainer />
+          }
+        </section>
       </main>
     )
   }

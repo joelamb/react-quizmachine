@@ -25,23 +25,28 @@ const GameOver = ({ hiscores, score, playerName, setPlayerName, submitHiScore })
     <form onSubmit={e => {
       e.preventDefault();
       submitHiScore();
-    }}>
+    }}
+      className="score">
       <fieldset>
         <legend>Save your score</legend>
-        <label htmlFor="score">Your score:
+        <p>
+          <label htmlFor="score">Your score:
         <input type="number" name="score" id="score" value={score} readOnly />
-        </label><br />
-        <label htmlFor="playerName">Enter your initials:
+          </label>
+        </p>
+        <p>
+          <label htmlFor="playerName">Enter your initials:
         <input
-            type="text"
-            name="playerName"
-            id="playerName"
-            onChange={e => setPlayerName(e.target.value)}
-            value={playerName}
-            pattern="[A-Za-z]{3}"
-            placeholder="3 characters" />
-        </label><br />
-        <input type="submit" value="Save Score" />
+              type="text"
+              name="playerName"
+              id="playerName"
+              onChange={e => setPlayerName(e.target.value)}
+              value={playerName}
+              pattern="[A-Za-z]{3}"
+              placeholder="3 characters"
+              className="name" />
+          </label></p>
+        <button type="submit" className="btn btn__primary">Save score</button>
       </fieldset>
     </form>
   </section>

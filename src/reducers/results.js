@@ -2,7 +2,7 @@ const results = (state = {
   hidden: true,
   answer: '',
   correctAnswer: '',
-  lives: 0,
+  lives: 3,
   score: 0,
   questionsAnswered: 0,
   hiscores: [],

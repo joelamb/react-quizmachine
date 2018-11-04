@@ -20,3 +20,12 @@
     }
   }
 }
+
+@media (min-width: 1024px){
+  .scoreboard{
+    align-self: flex-start;
+    margin-top: 1rem;
+    position: relative;
+    width: 30%;
+  }
+}

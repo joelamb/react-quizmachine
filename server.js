@@ -26,7 +26,8 @@ app.get('/api/scores', (req, res) => {
   db.any(`SELECT player.name, MAX(game.score) as score FROM game, player
     WHERE game.player_id = player.id
     GROUP BY player.name
-    ORDER BY score DESC`)
+    ORDER BY score DESC
+    LIMIT 10`)
     .then(hiscores => res.json(hiscores))
     .catch(error => {
       res.boom.notFound(`Sorry, there are no hi-scores`);

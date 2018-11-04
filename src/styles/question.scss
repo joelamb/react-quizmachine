@@ -3,26 +3,56 @@
 .question-holder {
   padding: 1rem;
 }
-
 .question {
 font-size: 1.3rem;
 line-height: 1.2;
 margin-top: 0.5rem;
 }
-
 .answers{
   list-style-type:none;
   margin: 0;
   padding: 0;
 }
-
 .answer{
   margin: 1rem 0;
   padding: 0;
-  .btn {
-    font-size: 1.2rem;
-    width: 100%;
-    padding: 1rem;
-    text-align:center;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 1rem;
+  text-align:center;
+}
+
+@media (min-width:768px){
+  .question-holder{
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    .question{
+      font-size: 1.5rem;
+    }
+    .answers{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .answer{
+      width:45%;
+    }
   }
+}
+
+@media (min-width: 1024px){
+.question-holder{
+  justify-content: flex-start;
+  width: 50%;
+  margin: 0;
+  .answer{
+    &:hover{
+      background: greenyellow;
+    }
+  }
+}
 }

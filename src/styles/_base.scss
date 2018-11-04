@@ -8,6 +8,7 @@ $body-font: Arial, Helvetica, sans-serif;
 
 $color1: gainsboro;
 $color2: ivory;
+$color3: orange;
 
 /* buttons */
 .btn{
@@ -16,4 +17,9 @@ $color2: ivory;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
   padding: 0.5rem 1rem;
+  &__primary{
+    background: $color3;
+    color: white;
+    text-shadow: 0 -1px 0 $color1;
+  }
 }

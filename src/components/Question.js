@@ -11,8 +11,7 @@ const Question = ({ question, answers, difficulty, handleClick, fetchQuestion })
         <p className="question">{decode(question.question)}</p>
         <ul className="answers">
           {answers.map(answer => {
-            return <li className="answer" key={answer}>
-              <button onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }} className="btn">{decode(answer)}</button>
+            return <li className="answer btn" key={answer} onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }}>{decode(answer)}
             </li>
           })}
         </ul>

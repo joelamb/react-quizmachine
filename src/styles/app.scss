@@ -13,13 +13,41 @@ html{
 
 header{
   background: $color1;
+  div {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  i {
+    align-self: center;
+  }
+  }
 }
 h1{
 font-family: $display-font;
 margin: 0;
 text-transform: uppercase;
 width: 80%;
+}
+
+@media (min-width:768px){
+  h1{
+  font-size: 3rem;
+  width: 72%;
+  }
+}
+
+@media (min-width:1024px){
+  .page, header div{
+    margin: auto;
+    max-width: 960px;
+    h1{
+      width: 70%;
+    }
+  }
+  .page{
+    margin-top: 8rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
 }

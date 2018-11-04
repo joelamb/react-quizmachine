@@ -16,6 +16,7 @@
     border: 1px solid black;
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 1rem;
     padding: 0;
     thead{
       background: black;
@@ -35,13 +36,76 @@
       }
       td{
         padding: 0.5rem;
+        text-transform: uppercase;
       }
     }
   }
 
-  legend{
+  form{
+    text-align: left;
+      legend{
     color: white;
     background: black;
     padding: 0.25rem 0.5rem;
     }
+    .name{
+      border: 1px solid $color1;
+      margin-left: 0.5rem;
+    }
+  }
 }
+
+@media (min-width: 768px){
+  .gameover{
+    table, form{
+      margin: 2rem auto;
+      width: 60%;
+    }
+    fieldset{
+      padding: 1rem;
+    }
+    p{
+      margin: 0 0 1rem 0;
+    }
+    .btn {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media (min-width: 1024px){
+  .gameover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    h2, h3{
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    h3{
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+    table, form{
+    margin:0;
+    width: 60%;
+    }
+    form {
+      width: 30%;
+      fieldset{
+        padding: 1rem;
+        p{
+          margin: 0 0 1rem 0;
+        }
+        .name{
+          margin: 0.5rem 0 0 0;
+        }
+        .btn {
+          margin-top: 1rem;
+        }
+      }    
+    }
+
+  }
+}
+
