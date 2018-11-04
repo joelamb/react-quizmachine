@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/options.scss';
 
 const Options = ({ handleSubmit }) => {
   const categories = [
@@ -29,36 +30,40 @@ const Options = ({ handleSubmit }) => {
   const initialDifficulty = difficulties[0];
 
   return (
-    <form onSubmit={(e) => {
+    <form className="options" onSubmit={(e) => {
       e.preventDefault();
       handleSubmit(e.target.categorySelect.value, e.target.difficultySelect.value);
     }}>
-      <fieldset>
+      <fieldset className="options__category">
         <legend>Select a category</legend>
         {categories.map(item => {
           const { id, category } = item;
-          return <div key={id}>
-            <input
-              type="radio"
-              name="categorySelect"
-              id={category}
-              value={id}
-              defaultChecked={id == initialId ? true : false} />
-            <label htmlFor={category}>{category}</label>
-          </div>
+          return <p key={id}>
+            <label htmlFor={category}>
+              <input
+                type="radio"
+                name="categorySelect"
+                id={category}
+                value={id}
+                defaultChecked={id == initialId ? true : false} />
+              <span>{category}</span>
+            </label>
+          </p>
         })}
       </fieldset>
 
-      <fieldset>
+      <fieldset className="options__difficulty">
         <legend>Select a difficulty level</legend>
         {difficulties.map(item => {
-          return <div key={item}>
-            <input type="radio" name="difficultySelect" id={item} value={item} defaultChecked={item == initialDifficulty ? true : false} />
-            <label htmlFor={item}>{item}</label>
-          </div>
+          return <p key={item}>
+            <label htmlFor={item}>
+              <input type="radio" name="difficultySelect" id={item} value={item} defaultChecked={item == initialDifficulty ? true : false} />
+              <span>{item}</span>
+            </label>
+          </p>
         })}
       </fieldset>
-      <input type="submit" value="Submit" />
+      <button type="submit" className="btn">Submit</button>
     </form>
   )
 }

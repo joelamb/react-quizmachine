@@ -29,6 +29,8 @@
     "hbs": "^4.0.1",
     "he": "^1.2.0",
     "lodash": "^4.17.11",
+    "normalize-scss": "^7.0.1",
+    "normalize.css": "^8.0.0",
     "pg-promise": "^8.5.1",
     "prop-types": "^15.6.2",
     "react": "^16.2.0",

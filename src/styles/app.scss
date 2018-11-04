@@ -1,4 +1,23 @@
+@charset "UTF-8";
+
+@import './base.scss';
+
+html{
+  box-sizing: border-box;
+  font-family: $body-font;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header{
+  background: gainsboro;
+  text-align: center;
+  padding: 1rem 0;
+}
 h1{
-  text-transform: uppercase;
-  color: darkslategrey;
+font-family: $display-font;
+margin: 0;
+text-transform: uppercase;
 }

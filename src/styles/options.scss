@@ -1,0 +1,19 @@
+.options{
+  background: ivory;
+  padding:0.5rem;
+}
+
+.options__category, .options__difficulty{
+  margin-bottom: 0.5rem;
+  legend{
+    color: white;
+    background: black;
+    padding: 0.25rem 0.5rem;
+  }
+  label {
+    text-transform: capitalize;
+  }
+  span {
+    margin-left: 0.5rem;
+  }
+}

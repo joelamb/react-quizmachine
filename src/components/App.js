@@ -21,7 +21,10 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <h1>App contents go here.. you've got {this.props.lives} lives</h1>
+        <header>
+          <h1>Mastermind</h1>
+          <i class="material-icons">settings</i>
+        </header>
         {this.props.lives > 0 &&
           <React.Fragment>
             <OptionsContainer />
