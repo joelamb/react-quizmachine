@@ -124,6 +124,25 @@ exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normali
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/gameover.scss":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/styles/gameover.scss ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\n.gameover {\n  padding: 1rem;\n  text-align: center; }\n  .gameover h2 {\n    font-size: 2rem;\n    margin: 0 0 0.5rem 0;\n    text-transform: uppercase; }\n  .gameover h3 {\n    font-size: 1.5rem;\n    margin: 0 0 0.5rem 0; }\n  .gameover table {\n    border: 1px solid black;\n    border-collapse: collapse;\n    width: 100%;\n    padding: 0; }\n    .gameover table thead {\n      background: black;\n      color: white;\n      text-transform: uppercase; }\n      .gameover table thead td {\n        padding: 0.5rem;\n        width: 50%; }\n    .gameover table tbody tr {\n      border-bottom: 1px solid gainsboro; }\n      .gameover table tbody tr:last-child {\n        border-bottom: none; }\n    .gameover table tbody td {\n      padding: 0.5rem; }\n  .gameover legend {\n    color: white;\n    background: black;\n    padding: 0.25rem 0.5rem; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/options.scss":
 /*!****************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/styles/options.scss ***!
@@ -41486,6 +41505,8 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(/*! ../styles/gameover.scss */ "./src/styles/gameover.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var GameOver = function GameOver(_ref) {
@@ -41495,56 +41516,56 @@ var GameOver = function GameOver(_ref) {
       setPlayerName = _ref.setPlayerName,
       submitHiScore = _ref.submitHiScore;
   return _react2.default.createElement(
-    "div",
-    null,
+    'section',
+    { className: 'gameover' },
     _react2.default.createElement(
-      "h2",
+      'h2',
       null,
-      "Game Over"
+      'Game Over'
     ),
     _react2.default.createElement(
-      "h3",
+      'h3',
       null,
-      "Leaderboard"
+      'Leaderboard'
     ),
     _react2.default.createElement(
-      "table",
+      'table',
       null,
       _react2.default.createElement(
-        "thead",
+        'thead',
         null,
         _react2.default.createElement(
-          "tr",
+          'tr',
           null,
           _react2.default.createElement(
-            "td",
+            'td',
             null,
-            "Name"
+            'Name'
           ),
           _react2.default.createElement(
-            "td",
+            'td',
             null,
-            "Score"
+            'Score'
           )
         )
       ),
       _react2.default.createElement(
-        "tbody",
+        'tbody',
         null,
         hiscores.map(function (item) {
           var name = item.name,
               score = item.score;
 
           return _react2.default.createElement(
-            "tr",
+            'tr',
             { key: name },
             _react2.default.createElement(
-              "td",
+              'td',
               null,
               name
             ),
             _react2.default.createElement(
-              "td",
+              'td',
               null,
               score
             )
@@ -41553,35 +41574,44 @@ var GameOver = function GameOver(_ref) {
       )
     ),
     _react2.default.createElement(
-      "form",
+      'form',
       { onSubmit: function onSubmit(e) {
           e.preventDefault();
           submitHiScore();
         } },
       _react2.default.createElement(
-        "label",
-        { htmlFor: "score" },
-        "Your score:",
-        _react2.default.createElement("input", { type: "number", name: "score", id: "score", value: score, readOnly: true })
-      ),
-      _react2.default.createElement("br", null),
-      _react2.default.createElement(
-        "label",
-        { htmlFor: "playerName" },
-        "Enter your initials:",
-        _react2.default.createElement("input", {
-          type: "text",
-          name: "playerName",
-          id: "playerName",
-          onChange: function onChange(e) {
-            return setPlayerName(e.target.value);
-          },
-          value: playerName,
-          pattern: "[A-Za-z]{3}",
-          placeholder: "3 characters" })
-      ),
-      _react2.default.createElement("br", null),
-      _react2.default.createElement("input", { type: "submit", value: "Save Score" })
+        'fieldset',
+        null,
+        _react2.default.createElement(
+          'legend',
+          null,
+          'Save your score'
+        ),
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'score' },
+          'Your score:',
+          _react2.default.createElement('input', { type: 'number', name: 'score', id: 'score', value: score, readOnly: true })
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'playerName' },
+          'Enter your initials:',
+          _react2.default.createElement('input', {
+            type: 'text',
+            name: 'playerName',
+            id: 'playerName',
+            onChange: function onChange(e) {
+              return setPlayerName(e.target.value);
+            },
+            value: playerName,
+            pattern: '[A-Za-z]{3}',
+            placeholder: '3 characters' })
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('input', { type: 'submit', value: 'Save Score' })
+      )
     )
   );
 };
@@ -42340,7 +42370,7 @@ var results = function results() {
     hidden: true,
     answer: '',
     correctAnswer: '',
-    lives: 3,
+    lives: 0,
     score: 0,
     questionsAnswered: 0,
     hiscores: [],
@@ -42393,6 +42423,36 @@ exports.default = results;
 
 
 var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./app.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/app.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/styles/gameover.scss":
+/*!**********************************!*\
+  !*** ./src/styles/gameover.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./gameover.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/gameover.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
