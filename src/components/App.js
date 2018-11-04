@@ -22,8 +22,8 @@ class App extends React.Component {
     return (
       <main>
         <header>
+          <i className="material-icons">menu</i>
           <h1>Mastermind</h1>
-          <i class="material-icons">settings</i>
         </header>
         {this.props.lives > 0 &&
           <React.Fragment>

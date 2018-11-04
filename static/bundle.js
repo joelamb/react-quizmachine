@@ -117,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\nhtml {\n  box-sizing: border-box;\n  font-family: Arial, Helvetica, sans-serif; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nheader {\n  background: gainsboro;\n  text-align: center;\n  padding: 1rem 0; }\n\nh1 {\n  font-family: Arial, Helvetica, sans-serif;\n  margin: 0;\n  text-transform: uppercase; }\n", ""]);
+exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\nhtml {\n  box-sizing: border-box;\n  font-family: Arial, Helvetica, sans-serif; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nheader {\n  background: gainsboro;\n  display: flex;\n  justify-content: space-between;\n  padding: 1rem; }\n\nh1 {\n  font-family: Arial, Helvetica, sans-serif;\n  margin: 0;\n  text-transform: uppercase;\n  width: 80%; }\n", ""]);
 
 // exports
 
@@ -136,7 +136,64 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".options {\n  background: ivory;\n  padding: 0.5rem; }\n\n.options__category, .options__difficulty {\n  margin-bottom: 0.5rem; }\n  .options__category legend, .options__difficulty legend {\n    color: white;\n    background: black;\n    padding: 0.25rem 0.5rem; }\n  .options__category label, .options__difficulty label {\n    text-transform: capitalize; }\n  .options__category span, .options__difficulty span {\n    margin-left: 0.5rem; }\n", ""]);
+exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\n.options {\n  position: absolute;\n  left: -100%;\n  background-color: ivory;\n  border-bottom: 1px solid gainsboro;\n  padding: 1rem 0.5rem;\n  width: 100%; }\n  .options__category, .options__difficulty {\n    margin-bottom: 1rem; }\n    .options__category legend, .options__difficulty legend {\n      color: white;\n      background: black;\n      padding: 0.25rem 0.5rem; }\n    .options__category label, .options__difficulty label {\n      text-transform: capitalize; }\n    .options__category span, .options__difficulty span {\n      margin-left: 0.5rem; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/question.scss":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/styles/question.scss ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\n.question-holder {\n  padding: 1rem; }\n\n.question {\n  font-size: 1.3rem;\n  line-height: 1.2;\n  margin-top: 0.5rem; }\n\n.answers {\n  list-style-type: none;\n  margin: 0;\n  padding: 0; }\n\n.answer {\n  margin: 1rem 0;\n  padding: 0; }\n  .answer .btn {\n    font-size: 1.2rem;\n    width: 100%;\n    padding: 1rem;\n    text-align: center; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/result.scss":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/styles/result.scss ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\n.result {\n  padding: 1rem; }\n  .result__correct, .result__incorrect {\n    position: fixed;\n    top: 0;\n    left: 0;\n    pointer-events: none;\n    width: 100%;\n    height: 100vh; }\n  .result img {\n    width: 100%;\n    height: 100vh;\n    object-fit: cover; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/scoreboard.scss":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/styles/scoreboard.scss ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */\n/* Document\n       ========================================================================== */\n/**\n     * 1. Correct the line height in all browsers.\n     * 2. Prevent adjustments of font size after orientation changes in\n     *    IE on Windows Phone and in iOS.\n     */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n       ========================================================================== */\n/**\n     * Remove the margin in all browsers (opinionated).\n     */\nbody {\n  margin: 0; }\n\n/**\n     * Add the correct display in IE 9-.\n     */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n     * Correct the font size and margin on `h1` elements within `section` and\n     * `article` contexts in Chrome, Firefox, and Safari.\n     */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\nfigcaption,\nfigure {\n  display: block; }\n\n/**\n     * Add the correct margin in IE 8.\n     */\nfigure {\n  margin: 1em 40px; }\n\n/**\n     * 1. Add the correct box sizing in Firefox.\n     * 2. Show the overflow in Edge and IE.\n     */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n     * Add the correct display in IE.\n     */\nmain {\n  display: block; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Links\n       ========================================================================== */\n/**\n     * 1. Remove the gray background on active links in IE 10.\n     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n     */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/* Text-level semantics\n       ========================================================================== */\n/**\n     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n     */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n     */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n     * Add the correct font weight in Chrome, Edge, and Safari.\n     */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n     * 1. Correct the inheritance and scaling of font size in all browsers.\n     * 2. Correct the odd `em` font sizing in all browsers.\n     */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n     * Add the correct font style in Android 4.3-.\n     */\ndfn {\n  font-style: italic; }\n\n/**\n     * Add the correct background and color in IE 9-.\n     */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n     * Add the correct font size in all browsers.\n     */\nsmall {\n  font-size: 80%; }\n\n/**\n     * Prevent `sub` and `sup` elements from affecting the line height in\n     * all browsers.\n     */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n     * Add the correct display in iOS 4-7.\n     */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n     * Remove the border on images inside links in IE 10-.\n     */\nimg {\n  border-style: none; }\n\n/**\n     * Hide the overflow in IE.\n     */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n       ========================================================================== */\n/**\n     * 1. Change the font styles in all browsers (opinionated).\n     * 2. Remove the margin in Firefox and Safari.\n     */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n     * Show the overflow in IE.\n     */\nbutton {\n  overflow: visible; }\n\n/**\n     * Remove the inheritance of text transform in Edge, Firefox, and IE.\n     * 1. Remove the inheritance of text transform in Firefox.\n     */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n     *    controls in Android 4.\n     * 2. Correct the inability to style clickable types in iOS and Safari.\n     */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  /**\n       * Remove the inner border and padding in Firefox.\n       */\n  /**\n       * Restore the focus styles unset by the previous rule.\n       */ }\n  button::-moz-focus-inner,\n  [type=\"button\"]::-moz-focus-inner,\n  [type=\"reset\"]::-moz-focus-inner,\n  [type=\"submit\"]::-moz-focus-inner {\n    border-style: none;\n    padding: 0; }\n  button:-moz-focusring,\n  [type=\"button\"]:-moz-focusring,\n  [type=\"reset\"]:-moz-focusring,\n  [type=\"submit\"]:-moz-focusring {\n    outline: 1px dotted ButtonText; }\n\n/**\n     * Show the overflow in Edge.\n     */\ninput {\n  overflow: visible; }\n\n/**\n     * 1. Add the correct box sizing in IE 10-.\n     * 2. Remove the padding in IE 10-.\n     */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n     * Correct the cursor style of increment and decrement buttons in Chrome.\n     */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n     * 1. Correct the odd appearance in Chrome and Safari.\n     * 2. Correct the outline style in Safari.\n     */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n  /**\n       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n       */ }\n  [type=\"search\"]::-webkit-search-cancel-button, [type=\"search\"]::-webkit-search-decoration {\n    -webkit-appearance: none; }\n\n/**\n     * 1. Correct the inability to style clickable types in iOS and Safari.\n     * 2. Change font properties to `inherit` in Safari.\n     */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/**\n     * Correct the padding in Firefox.\n     */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n     * 1. Correct the text wrapping in Edge and IE.\n     * 2. Correct the color inheritance from `fieldset` elements in IE.\n     * 3. Remove the padding so developers are not caught out when they zero out\n     *    `fieldset` elements in all browsers.\n     */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  color: inherit;\n  /* 2 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n     * 1. Add the correct display in IE 9-.\n     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n     */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n     * Remove the default vertical scrollbar in IE.\n     */\ntextarea {\n  overflow: auto; }\n\n/* Interactive\n       ========================================================================== */\n/*\n     * Add the correct display in Edge, IE, and Firefox.\n     */\ndetails {\n  display: block; }\n\n/*\n     * Add the correct display in all browsers.\n     */\nsummary {\n  display: list-item; }\n\n/*\n     * Add the correct display in IE 9-.\n     */\nmenu {\n  display: block; }\n\n/* Scripting\n       ========================================================================== */\n/**\n     * Add the correct display in IE 9-.\n     */\ncanvas {\n  display: inline-block; }\n\n/**\n     * Add the correct display in IE.\n     */\ntemplate {\n  display: none; }\n\n/* Hidden\n       ========================================================================== */\n/**\n     * Add the correct display in IE 10-.\n     */\n[hidden] {\n  display: none; }\n\n/*variables*/\n/* buttons */\n.btn {\n  background: white;\n  border: none;\n  border-radius: 4px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);\n  padding: 0.5rem 1rem; }\n\n.scoreboard {\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  background-color: gainsboro;\n  display: flex;\n  justify-content: space-around;\n  padding: 0 3rem; }\n  .scoreboard__lives, .scoreboard__score {\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    text-transform: uppercase; }\n    .scoreboard__lives span, .scoreboard__score span {\n      display: inline-block;\n      font-size: 2rem;\n      margin-top: 0.5rem; }\n", ""]);
 
 // exports
 
@@ -41199,6 +41256,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.setOptions = setOptions;
 exports.submitAnswer = submitAnswer;
+exports.hideResult = hideResult;
 exports.receiveHiScores = receiveHiScores;
 exports.receiveQuestion = receiveQuestion;
 exports.fetchQuestion = fetchQuestion;
@@ -41224,6 +41282,13 @@ function submitAnswer(answer, difficulty, correctAnswer) {
     correctAnswer: correctAnswer
   };
 }
+
+function hideResult(hidden) {
+  return {
+    type: 'HIDE_RESULT'
+  };
+}
+
 function receiveHiScores(hiscores) {
   return {
     type: 'RECEIVE_HISCORES',
@@ -41373,14 +41438,14 @@ var App = function (_React$Component) {
           'header',
           null,
           _react2.default.createElement(
+            'i',
+            { className: 'material-icons' },
+            'menu'
+          ),
+          _react2.default.createElement(
             'h1',
             null,
             'Mastermind'
-          ),
-          _react2.default.createElement(
-            'i',
-            { 'class': 'material-icons' },
-            'settings'
           )
         ),
         this.props.lives > 0 && _react2.default.createElement(
@@ -41661,78 +41726,53 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
 var _he = __webpack_require__(/*! he */ "./node_modules/he/he.js");
 
+__webpack_require__(/*! ../styles/question.scss */ "./src/styles/question.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Question = function (_React$Component) {
-  _inherits(Question, _React$Component);
-
-  function Question(props) {
-    _classCallCheck(this, Question);
-
-    return _possibleConstructorReturn(this, (Question.__proto__ || Object.getPrototypeOf(Question)).call(this, props));
-  }
-
-  _createClass(Question, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          question = _props.question,
-          answers = _props.answers,
-          difficulty = _props.difficulty,
-          handleClick = _props.handleClick,
-          fetchQuestion = _props.fetchQuestion;
-
-
-      return _react2.default.createElement(
-        'article',
-        null,
-        question.question && _react2.default.createElement(
-          _react2.default.Fragment,
-          null,
-          _react2.default.createElement(
-            'p',
-            null,
-            (0, _he.decode)(question.question)
-          ),
-          _react2.default.createElement(
-            'ul',
-            null,
-            answers.map(function (answer) {
-              return _react2.default.createElement(
-                'li',
-                { key: answer },
-                ' ',
-                _react2.default.createElement(
-                  'button',
-                  { onClick: function onClick() {
-                      handleClick(answer, difficulty, question.correct_answer);fetchQuestion();
-                    } },
-                  (0, _he.decode)(answer)
-                )
-              );
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return Question;
-}(_react2.default.Component);
+var Question = function Question(_ref) {
+  var question = _ref.question,
+      answers = _ref.answers,
+      difficulty = _ref.difficulty,
+      handleClick = _ref.handleClick,
+      fetchQuestion = _ref.fetchQuestion;
+  return _react2.default.createElement(
+    'article',
+    { className: 'question-holder' },
+    question.question && _react2.default.createElement(
+      _react2.default.Fragment,
+      null,
+      _react2.default.createElement(
+        'p',
+        { className: 'question' },
+        (0, _he.decode)(question.question)
+      ),
+      _react2.default.createElement(
+        'ul',
+        { className: 'answers' },
+        answers.map(function (answer) {
+          return _react2.default.createElement(
+            'li',
+            { className: 'answer', key: answer },
+            _react2.default.createElement(
+              'button',
+              { onClick: function onClick() {
+                  handleClick(answer, difficulty, question.correct_answer);fetchQuestion();
+                }, className: 'btn' },
+              (0, _he.decode)(answer)
+            )
+          );
+        })
+      )
+    )
+  );
+};
 
 exports.default = Question;
 
@@ -41752,38 +41792,82 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(/*! ../styles/result.scss */ "./src/styles/result.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Result = function Result(_ref) {
-  var correctAnswer = _ref.correctAnswer,
-      questionsAnswered = _ref.questionsAnswered;
-  return _react2.default.createElement(
-    "div",
-    { key: questionsAnswered },
-    correctAnswer && _react2.default.createElement(
-      _react2.default.Fragment,
-      null,
-      _react2.default.createElement(
-        "p",
-        null,
-        _react2.default.createElement("img", { src: "/static/assets/yeah_baby.jpg", alt: "" })
-      )
-    ),
-    correctAnswer !== '' && !correctAnswer && _react2.default.createElement(
-      _react2.default.Fragment,
-      null,
-      _react2.default.createElement(
-        "p",
-        null,
-        _react2.default.createElement("img", { src: "/static/assets/dang.jpg", alt: "" })
-      )
-    )
-  );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Result = function (_React$Component) {
+  _inherits(Result, _React$Component);
+
+  function Result(props) {
+    _classCallCheck(this, Result);
+
+    return _possibleConstructorReturn(this, (Result.__proto__ || Object.getPrototypeOf(Result)).call(this, props));
+  }
+
+  _createClass(Result, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          correctAnswer = _props.correctAnswer,
+          questionsAnswered = _props.questionsAnswered,
+          hidden = _props.hidden,
+          hideResult = _props.hideResult;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'result', key: questionsAnswered },
+        correctAnswer && _react2.default.createElement(
+          _react2.default.Fragment,
+          null,
+          _react2.default.createElement('audio', {
+            onLoadStart: function onLoadStart() {
+              return hideResult();
+            },
+            onEnded: function onEnded() {
+              return hideResult();
+            },
+            src: '/static/assets/yeah_baby.mp3', autoPlay: 'true' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'result__correct' },
+            !hidden && _react2.default.createElement('img', { src: '/static/assets/yeah_baby.jpg', alt: '' })
+          )
+        ),
+        correctAnswer !== '' && !correctAnswer && _react2.default.createElement(
+          _react2.default.Fragment,
+          null,
+          _react2.default.createElement('audio', {
+            onLoadStart: function onLoadStart() {
+              return hideResult();
+            },
+            onEnded: function onEnded() {
+              hideResult();
+            }, src: '/static/assets/dang.mp3', autoPlay: 'true' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'result__incorrect' },
+            !hidden && _react2.default.createElement('img', { src: '/static/assets/dang.jpg', alt: '' })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Result;
+}(_react2.default.Component);
 
 exports.default = Result;
 
@@ -41807,25 +41891,35 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(/*! ../styles/scoreboard.scss */ "./src/styles/scoreboard.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Scoreboard = function Scoreboard(_ref) {
   var score = _ref.score,
       lives = _ref.lives;
   return _react2.default.createElement(
-    'div',
-    null,
+    'section',
+    { className: 'scoreboard' },
     _react2.default.createElement(
       'p',
-      null,
-      'Lives: ',
-      lives
+      { className: 'scoreboard__lives' },
+      'Lives',
+      _react2.default.createElement(
+        'span',
+        null,
+        lives
+      )
     ),
     _react2.default.createElement(
       'p',
-      null,
-      'Score: ',
-      score
+      { className: 'scoreboard__score' },
+      'Score',
+      _react2.default.createElement(
+        'span',
+        null,
+        score
+      )
     )
   );
 };
@@ -41990,10 +42084,21 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-var mapDisatchToProps = {
-  fetchQuestion: _actions.fetchQuestion,
-  handleClick: _actions.submitAnswer
+var mapDisatchToProps = function mapDisatchToProps(dispatch) {
+  return {
+    fetchQuestion: function fetchQuestion() {
+      return dispatch((0, _actions.fetchQuestion)());
+    },
+    handleClick: function handleClick(answer, difficult, correctAnswer) {
+      dispatch((0, _actions.submitAnswer)(answer, difficult, correctAnswer));
+    }
+  };
 };
+
+// const mapDisatchToProps = {
+//   fetchQuestion,
+//   handleClick: submitAnswer,
+// };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDisatchToProps)(_Question2.default);
 
@@ -42019,16 +42124,23 @@ var _Result = __webpack_require__(/*! ../components/Result */ "./src/components/
 
 var _Result2 = _interopRequireDefault(_Result);
 
+var _actions = __webpack_require__(/*! ../actions */ "./src/actions/index.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
     correctAnswer: state.results.correctAnswer,
-    questionsAnswered: state.results.questionsAnswered
+    questionsAnswered: state.results.questionsAnswered,
+    hidden: state.results.hidden
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_Result2.default);
+var mapDispatchToProps = {
+  hideResult: _actions.hideResult
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Result2.default);
 
 /***/ }),
 
@@ -42225,6 +42337,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var results = function results() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    hidden: true,
     answer: '',
     correctAnswer: '',
     lives: 3,
@@ -42260,6 +42373,8 @@ var results = function results() {
       return Object.assign({}, state, { hiscores: action.hiscores });
     case 'SET_PLAYER_NAME':
       return Object.assign({}, state, { playerName: action.playerName });
+    case 'HIDE_RESULT':
+      return Object.assign({}, state, { hidden: !state.hidden });
     default:
       return state;
   }
@@ -42308,6 +42423,96 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./options.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/options.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/styles/question.scss":
+/*!**********************************!*\
+  !*** ./src/styles/question.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./question.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/question.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/styles/result.scss":
+/*!********************************!*\
+  !*** ./src/styles/result.scss ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./result.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/result.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/styles/scoreboard.scss":
+/*!************************************!*\
+  !*** ./src/styles/scoreboard.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./scoreboard.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/styles/scoreboard.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 

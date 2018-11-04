@@ -1,13 +1,20 @@
 import { connect } from 'react-redux';
 import Result from '../components/Result';
+import { hideResult } from '../actions';
 
 const mapStateToProps = state => {
   return {
     correctAnswer: state.results.correctAnswer,
-    questionsAnswered: state.results.questionsAnswered
+    questionsAnswered: state.results.questionsAnswered,
+    hidden: state.results.hidden
   }
 }
 
+const mapDispatchToProps = {
+  hideResult,
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps,
 )(Result);

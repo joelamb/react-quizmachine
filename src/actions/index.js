@@ -19,6 +19,14 @@ export function submitAnswer(answer, difficulty, correctAnswer) {
     correctAnswer,
   }
 }
+
+export function hideResult(hidden) {
+  return {
+    type: 'HIDE_RESULT',
+  }
+}
+
+
 export function receiveHiScores(hiscores) {
   return {
     type: 'RECEIVE_HISCORES',

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Question from '../components/Question';
-import { fetchQuestion, submitAnswer } from '../actions';
+import { fetchQuestion, submitAnswer, hideQuestion } from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,10 +10,18 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDisatchToProps = {
-  fetchQuestion,
-  handleClick: submitAnswer,
-};
+const mapDisatchToProps = dispatch => {
+  return {
+    fetchQuestion: () => dispatch(fetchQuestion()),
+    handleClick: (answer, difficult, correctAnswer) => { dispatch(submitAnswer(answer, difficult, correctAnswer)) }
+  }
+}
+
+
+// const mapDisatchToProps = {
+//   fetchQuestion,
+//   handleClick: submitAnswer,
+// };
 
 export default connect(
   mapStateToProps,

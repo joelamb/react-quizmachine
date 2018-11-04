@@ -1,0 +1,28 @@
+@import '_base.scss';
+
+.question-holder {
+  padding: 1rem;
+}
+
+.question {
+font-size: 1.3rem;
+line-height: 1.2;
+margin-top: 0.5rem;
+}
+
+.answers{
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+}
+
+.answer{
+  margin: 1rem 0;
+  padding: 0;
+  .btn {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1rem;
+    text-align:center;
+  }
+}

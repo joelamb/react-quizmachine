@@ -1,30 +1,27 @@
 import React from 'react';
 import { decode } from 'he';
+import '../styles/question.scss';
 
-class Question extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const Question = ({ question, answers, difficulty, handleClick, fetchQuestion }) => (
 
-  render() {
-    const { question, answers, difficulty, handleClick, fetchQuestion } = this.props;
+  <article className="question-holder" >
+    {
+      question.question &&
+      <React.Fragment>
+        <p className="question">{decode(question.question)}</p>
+        <ul className="answers">
+          {answers.map(answer => {
+            return <li className="answer" key={answer}>
+              <button onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }} className="btn">{decode(answer)}</button>
+            </li>
+          })}
+        </ul>
+      </React.Fragment>
+    }
+  </article >
 
-    return (
-      <article>
-        {question.question &&
-          <React.Fragment>
-            <p>{decode(question.question)}</p>
-            <ul>
-              {answers.map(answer => {
-                return <li key={answer} > <button onClick={() => { handleClick(answer, difficulty, question.correct_answer); fetchQuestion(); }}>{decode(answer)}</button></li>
-              })}
-            </ul>
-          </React.Fragment>
-        }
-      </article >
+)
 
-    )
-  }
-}
+
 
 export default Question;

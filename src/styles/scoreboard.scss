@@ -1,0 +1,22 @@
+@import '_base.scss';
+
+.scoreboard{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $color1;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 3rem;
+  &__lives, &__score{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    span{
+      display: inline-block;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+  }
+}

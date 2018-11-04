@@ -1,4 +1,5 @@
 const results = (state = {
+  hidden: true,
   answer: '',
   correctAnswer: '',
   lives: 3,
@@ -31,7 +32,9 @@ const results = (state = {
     case 'RECEIVE_HISCORES':
       return Object.assign({}, state, { hiscores: action.hiscores });
     case 'SET_PLAYER_NAME':
-      return Object.assign({}, state, { playerName: action.playerName })
+      return Object.assign({}, state, { playerName: action.playerName });
+    case 'HIDE_RESULT':
+      return Object.assign({}, state, { hidden: !state.hidden });
     default:
       return state;
   }
