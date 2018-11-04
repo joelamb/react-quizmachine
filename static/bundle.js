@@ -42215,6 +42215,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.mapStateToProps = undefined;
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
@@ -42224,7 +42225,7 @@ var _Scoreboard2 = _interopRequireDefault(_Scoreboard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = exports.mapStateToProps = function mapStateToProps(state) {
   return {
     score: state.results.score,
     lives: state.results.lives
